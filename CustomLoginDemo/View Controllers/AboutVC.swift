@@ -11,6 +11,7 @@ import Firebase
 
 class AboutVC: UITableViewController {
 
+    @IBOutlet weak var updateButton: UIButton!
     var content = [BasicCell]()
     var header : String?
     var t : String?
@@ -30,6 +31,9 @@ class AboutVC: UITableViewController {
 
     // MARK: - Table view data source
 
+    @IBAction func performUpdate(_ sender: UIButton) {
+        performSegue(withIdentifier: "segUpdate", sender: sender)
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -182,13 +186,24 @@ class AboutVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destiBroller.
+        if segue.identifier == "segUpdate"{            
+            if let button = sender as! UIButton?{
+                if button == updateButton{
+                    let updateVC = segue.destination as! UpdateLinkVC
+                    updateVC.type = self.t
+                    
+                }
+            }
+        }
+        
+        
     }
-    */
+    
 
 }

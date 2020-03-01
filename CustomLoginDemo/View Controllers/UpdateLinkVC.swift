@@ -8,9 +8,10 @@
 
 import UIKit
 import Firebase
-class UpdateLinkVC: UITableViewController {
+class UpdateLinkVC: UIViewController {
 
-
+    var db : Firestore?
+    var type : String?
     @IBOutlet weak var linkNameTextfield: UITextField!
     @IBOutlet weak var descriptionTextfield: UITextField!
     @IBOutlet weak var linkTextfield: UITextField!
@@ -24,6 +25,7 @@ class UpdateLinkVC: UITableViewController {
           
       }
     @IBAction func saveTapped(_ sender: UIButton) {
+        let db = Firestore.firestore()
         let error = validateFields()
         if error != nil{
             showError(error!)
@@ -31,10 +33,16 @@ class UpdateLinkVC: UITableViewController {
         guard let description = descriptionTextfield.text, !description.isEmpty else {return}
         guard let link = linkTextfield.text, !link.isEmpty else{return}
         guard let name = linkNameTextfield.text, !name.isEmpty else{return}
-        let dataToSave : [String : Any] = ["Description" : description, "Link": link]
-        docRef = Firestore.firestore().collection("Contracts").document(name)
+            if let t = self.type{
+                docRef = db.collection(t).document(name)
+            }
+            
         if let d = docRef{
-        d.setData(dataToSave){(error) in
+        d.setData([
+            "Description": description,
+            "Link": link,
+            "Date": Timestamp.init()
+        ]){(error) in
             if let error = error{
                 self.showError("Error! cannot store this link to database: \(error.localizedDescription)")
             }else {
