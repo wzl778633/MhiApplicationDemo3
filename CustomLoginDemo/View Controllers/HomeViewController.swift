@@ -10,22 +10,22 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var AboutButton: UIButton!
-       @IBOutlet weak var CourseButton: UIButton!
-       @IBOutlet weak var MessageButton: UIButton!
-       @IBOutlet weak var ScheduleButton: UIButton!
+    @IBOutlet weak var ContactsButton: UIButton!
+       @IBOutlet weak var JobsButton: UIButton!
+       @IBOutlet weak var LinksButton: UIButton!
+       @IBOutlet weak var MiscButton: UIButton!
        
-       @IBAction func AboutButtonAction(_ sender: Any) {
+       @IBAction func ContactButtonAction(_ sender: Any) {
            performSegue(withIdentifier: "segShowTable", sender: sender)
 
        }
-       @IBAction func CourseButtonAction(_ sender: Any) {
+       @IBAction func JobButtonAction(_ sender: Any) {
            performSegue(withIdentifier: "segShowTable", sender: sender)
        }
-       @IBAction func MessageButtonAction(_ sender: Any) {
+       @IBAction func LinkButtonAction(_ sender: Any) {
            performSegue(withIdentifier: "segShowTable", sender: sender)
        }
-       @IBAction func ScheduleButtonAction(_ sender: Any) {
+       @IBAction func MiscButtonAction(_ sender: Any) {
            performSegue(withIdentifier: "segShowTable", sender: sender)
        }
        
@@ -50,18 +50,18 @@ class HomeViewController: UIViewController {
            // Pass the selected object to the new view controller.
            if segue.identifier == "segShowTable"{
                if let button = sender as! UIButton?{
-                   if button == AboutButton{
+                   if button == ContactsButton{
                        let tableVC = segue.destination as! AboutVC
-                       tableVC.initialize(type: "About")
-                   }else if button == CourseButton{
+                       tableVC.t = "Contacts"
+                   }else if button == JobsButton{
                        let tableVC = segue.destination as! AboutVC
-                       tableVC.initialize(type: "Course")
-                   }else if button == MessageButton{
+                       tableVC.t = "Jobs"
+                   }else if button == LinksButton{
                        let tableVC = segue.destination as! AboutVC
-                       tableVC.initialize(type: "Message")
-                   }else if button == ScheduleButton{
+                       tableVC.t = "Links"
+                   }else if button == MiscButton{
                        let tableVC = segue.destination as! AboutVC
-                       tableVC.initialize(type: "Schedule")
+                       tableVC.t = "Misc"
                    }
                }
            }

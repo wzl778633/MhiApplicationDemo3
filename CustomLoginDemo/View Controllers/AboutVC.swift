@@ -7,18 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 class AboutVC: UITableViewController {
 
     var content = [BasicCell]()
     var header : String?
+    var t : String?
+    var db : Firestore?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        
     }
 
     // MARK: - Table view data source
@@ -34,29 +41,7 @@ class AboutVC: UITableViewController {
     }
     
 
-    func initialize(type: String){
-        if type == "About"{
-            self.content = [
-                BasicCell(title: "About", date: Date())
-            ]
-            self.header = "About"
-        }else if type == "Course"{
-            self.content = [
-                BasicCell(title: "Course", date: Date())
-            ]
-            self.header = "Course"
-        }else if type == "Schedule"{
-            self.content = [
-                BasicCell(title: "Schedule", date: Date())
-            ]
-            self.header = "Schedule"
-        }else if type == "Message"{
-            self.content = [
-                BasicCell(title: "Message", date: Date())
-            ]
-            self.header = "Message"
-        }
-    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -76,6 +61,91 @@ class AboutVC: UITableViewController {
                                 section: Int) -> String? {
         return self.header
     }
+    override func viewWillAppear(_ animated: Bool) {
+        if let type = t{
+            let db = Firestore.firestore()
+            if type == "Contacts"{
+                db.collection("Contacts").getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+
+                            if let tmp = document.get("Time") as? Timestamp {
+                                if let desc = document.get("Description") as? String{
+                                    if let lnk = document.get("link") as? String{
+                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
+                                        print(self.content)
+                                    }
+                                }
+                                
+                            }
+                        }
+                        self.tableView.reloadData()
+                        
+                    }
+                }
+                       
+                self.header = "Contacts"
+            }else if type == "Jobs"{
+                db.collection("Jobs").getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            let tmp = document.get("Date") as! Timestamp
+                            self.content.append(BasicCell(title: document.get("Name") as! String, date: tmp.dateValue(), link: document.get("Link") as! String))
+                            
+                        }
+                        self.tableView.reloadData()
+                        
+                    }
+                }
+                self.header = "Jobs"
+                
+            }else if type == "Links"{
+                db.collection("Links").getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            let tmp = document.get("Date") as! Timestamp
+                            self.content.append(BasicCell(title: document.get("Name") as! String, date: tmp.dateValue(), link: document.get("Link") as! String))
+                            
+                        }
+                        self.tableView.reloadData()
+                        
+                    }
+                }
+                self.header = "Links"
+            }else if type == "Misc"{
+                db.collection("Misc").getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            let tmp = document.get("Date") as! Timestamp
+                            self.content.append(BasicCell(title: document.get("Name") as! String, date: tmp.dateValue(), link: document.get("Link") as! String))
+                            
+                        }
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+                self.header = "Misc"
+            }
+        }
+        
+        super.viewWillAppear(true)
+    }
+    
+    
+
+    
 
     /*
     // Override to support conditional editing of the table view.

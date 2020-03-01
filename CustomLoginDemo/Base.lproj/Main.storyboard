@@ -254,12 +254,13 @@
                                 <rect key="frame" x="209" y="321" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Course">
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
+                                <state key="normal" title="Jobs">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="10"/>
                                 </state>
                                 <connections>
-                                    <action selector="CourseButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="ad9-pc-h14"/>
+                                    <action selector="JobButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="gkV-Jg-KNv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nr-TS-PUT">
@@ -267,11 +268,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="About">
+                                <state key="normal" title="Contacts">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="AboutButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="NYc-ze-VSO"/>
+                                    <action selector="ContactButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="JrF-oV-qfq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYj-iX-LTq">
@@ -279,11 +280,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Message">
+                                <state key="normal" title="Links">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="MessageButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="j1v-HM-VBJ"/>
+                                    <action selector="LinkButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="ApA-3S-kQK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyM-cp-eAn">
@@ -291,11 +292,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Schedule">
+                                <state key="normal" title="Misc">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="ScheduleButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="fTj-gK-QXw"/>
+                                    <action selector="MiscButtonAction:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="SuI-9k-Cik"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -306,10 +307,10 @@
                         <barButtonItem key="backBarButtonItem" title="Main Menu" id="6Rm-7J-EsV"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="AboutButton" destination="2nr-TS-PUT" id="Gcm-gP-kjG"/>
-                        <outlet property="CourseButton" destination="pje-g1-4xZ" id="zxZ-Vu-QwF"/>
-                        <outlet property="MessageButton" destination="MYj-iX-LTq" id="Cg6-Ba-eMv"/>
-                        <outlet property="ScheduleButton" destination="GyM-cp-eAn" id="D6Y-vi-aHU"/>
+                        <outlet property="ContactsButton" destination="2nr-TS-PUT" id="aey-qc-26G"/>
+                        <outlet property="JobsButton" destination="pje-g1-4xZ" id="ATB-iX-Yw0"/>
+                        <outlet property="LinksButton" destination="MYj-iX-LTq" id="u2J-Qe-8dX"/>
+                        <outlet property="MiscButton" destination="GyM-cp-eAn" id="0uO-Je-Usa"/>
                         <segue destination="YME-yt-BkJ" kind="show" identifier="segShowTable" id="hRR-pN-LnR"/>
                     </connections>
                 </viewController>
