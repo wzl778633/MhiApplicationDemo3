@@ -10,7 +10,12 @@ import Foundation
 
 struct Constants {
     struct Storyboard{
-        static let homeViewController = "HomeVC"
+        static let homeViewController = "MenuVC"
         static let viewController = "VC"
     }
+    
+}
+struct BasicCell {
+    var title : String
+    var date : Date
 }

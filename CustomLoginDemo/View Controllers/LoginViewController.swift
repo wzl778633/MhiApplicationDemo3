@@ -33,7 +33,6 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
-        Utilities.styleHollowButton(backButton)
     }
 
 
@@ -63,12 +62,12 @@ class LoginViewController: UIViewController {
                 self.errorLabel.alpha = 1
             }
             else {
-                let homeViewController =
-                    self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as?
-                HomeViewController
-                
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
+                               
+                let vc : HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+                let navigationController = UINavigationController(rootViewController: vc)
+                vc.modalPresentationStyle = .fullScreen
+                navigationController.modalPresentationStyle = .fullScreen
+                self.present(navigationController,animated: true,completion: nil)
             }
         }
     }
