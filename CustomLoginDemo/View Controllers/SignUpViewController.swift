@@ -62,7 +62,7 @@ class SignUpViewController: UIViewController {
         
         // Check if the password is sercure
         let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        Utilities.isPasswordValid(cleanedPassword)
+       
         
         if Utilities.isPasswordValid(cleanedPassword) == false{
             // Password isn't secure enough

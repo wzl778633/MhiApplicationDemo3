@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class Utilities {
     
     static func styleTextField(_ textfield:UITextField) {
@@ -51,6 +52,13 @@ class Utilities {
         return passwordTest.evaluate(with: password)
     }
     
-
+    static func isGoodUrl(urlString: String?)-> Bool {
+        if let urlString = urlString{
+            if let url = NSURL(string : urlString){
+                return UIApplication.shared.canOpenURL(url as URL)
+            }
+        }
+        return false
+    }
     
 }

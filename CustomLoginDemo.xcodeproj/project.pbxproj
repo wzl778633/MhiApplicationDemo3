@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26F780F1240C4D2700508EA3 /* UpdateLinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */; };
 		44FE5D942409B99400C83B17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5D932409B99400C83B17 /* AppDelegate.swift */; };
 		44FE5D962409B99400C83B17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5D952409B99400C83B17 /* SceneDelegate.swift */; };
 		44FE5D982409B99400C83B17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5D972409B99400C83B17 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0FE4DD51A80DCEC807A5654D /* Pods-CustomLoginDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemo.debug.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLinkVC.swift; sourceTree = "<group>"; };
 		44FE5D902409B99400C83B17 /* CustomLoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomLoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FE5D932409B99400C83B17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FE5D952409B99400C83B17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */,
 				44FE5D972409B99400C83B17 /* ViewController.swift */,
 				AF47E7CC240C03CA00E78F60 /* AboutVC.swift */,
+				26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				44FE5D982409B99400C83B17 /* ViewController.swift in Sources */,
 				44FE5D942409B99400C83B17 /* AppDelegate.swift in Sources */,
 				44FE5DAF2409C75D00C83B17 /* Utilities.swift in Sources */,
+				26F780F1240C4D2700508EA3 /* UpdateLinkVC.swift in Sources */,
 				44FE5DA82409B9DD00C83B17 /* SignUpViewController.swift in Sources */,
 				44FE5DAA2409B9F900C83B17 /* LoginViewController.swift in Sources */,
 				AF47E7CD240C03CA00E78F60 /* AboutVC.swift in Sources */,
