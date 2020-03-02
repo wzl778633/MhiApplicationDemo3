@@ -224,7 +224,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9jB-LQ-Qfd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="agJ-fT-4Ll" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="launchVC" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="agJ-fT-4Ll" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="stZ-or-BO1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

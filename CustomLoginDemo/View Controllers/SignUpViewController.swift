@@ -112,8 +112,13 @@ class SignUpViewController: UIViewController {
                             }
                             
                             // Transition to the home screen
-                    self.transitionToHome()
-                    }
+                            
+                            }
+                    let vc : ViewController = self.storyboard?.instantiateViewController(withIdentifier: "VC") as! ViewController
+                    let navigationController = UINavigationController(rootViewController: vc)
+                    vc.modalPresentationStyle = .fullScreen
+                    navigationController.modalPresentationStyle = .fullScreen
+                    self.present(navigationController,animated: true,completion: nil)
                 }
             }
             //Transition to the home scrren
@@ -126,13 +131,5 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 1
     }
     
-    func transitionToHome(){
-        let homeViewController =
-        storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as?
-        HomeViewController
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
-    }
-    
+
 }
