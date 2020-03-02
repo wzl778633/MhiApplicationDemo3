@@ -365,6 +365,7 @@
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
                                     <action selector="performUpdate:" destination="YME-yt-BkJ" eventType="touchUpInside" id="0Yv-E1-0ix"/>
+                                    <segue destination="6sJ-aj-k9S" kind="show" identifier="segUpdate" id="Oee-sW-QDX"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -386,7 +387,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-Tg-HWj">
-                                <rect key="frame" x="40" y="84" width="334" height="320.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="320.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-di-tWC">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>

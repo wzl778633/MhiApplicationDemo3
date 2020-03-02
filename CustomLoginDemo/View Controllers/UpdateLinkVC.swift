@@ -58,6 +58,7 @@ class UpdateLinkVC: UIViewController {
     func setUpElements(){
             errorLabel.alpha = 0;
            // Style the elements
+           Utilities.styleTextField(linkNameTextfield)
            Utilities.styleTextField(descriptionTextfield)
            Utilities.styleTextField(linkTextfield)
 

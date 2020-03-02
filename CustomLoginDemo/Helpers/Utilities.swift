@@ -19,7 +19,7 @@ class Utilities {
         
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         
-        bottomLine.backgroundColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1).cgColor
+        bottomLine.backgroundColor = UIColor.init(red: 255/255, green: 0/255, blue: 0/255, alpha: 1).cgColor
         
         // Remove border on text field
         textfield.borderStyle = .none
@@ -32,7 +32,7 @@ class Utilities {
     static func styleFilledButton(_ button:UIButton) {
         
         // Filled rounded corner style
-        button.backgroundColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1)
+        button.backgroundColor = UIColor.init(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
     }
@@ -55,7 +55,9 @@ class Utilities {
     static func isGoodUrl(urlString: String?)-> Bool {
         if let urlString = urlString{
             if let url = NSURL(string : urlString){
-                return UIApplication.shared.canOpenURL(url as URL)
+                if UIApplication.shared.canOpenURL(url as URL){
+                    return url.checkResourceIsReachableAndReturnError(<#T##error: NSErrorPointer##NSErrorPointer#>)
+                }
             }
         }
         return false
