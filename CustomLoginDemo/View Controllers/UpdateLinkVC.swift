@@ -51,8 +51,7 @@ class UpdateLinkVC: UIViewController {
                 self.linkNameTextfield.isUserInteractionEnabled = false
                 self.descriptionTextfield.isUserInteractionEnabled = false
                 self.linkTextfield.isUserInteractionEnabled = false
-                
-                
+                self.navigationController?.popViewController(animated: true)
             }
             
         }
