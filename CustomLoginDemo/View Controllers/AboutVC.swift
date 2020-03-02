@@ -54,7 +54,7 @@ class AboutVC: UITableViewController {
         cell.textLabel!.text = content[indexPath.row].title
         
         if let detailLabel = cell.detailTextLabel {
-            let dateStr = content[indexPath.row].date.description
+            let dateStr = content[indexPath.row].title.description
             detailLabel.text = String(dateStr.prefix(20))
         }
         
@@ -65,106 +65,36 @@ class AboutVC: UITableViewController {
                                 section: Int) -> String? {
         return self.header
     }
-    override func viewWillAppear(_ animated: Bool) {
-        if let type = t{
-            let db = Firestore.firestore()
-            if type == "Contacts"{
-                db.collection("Contacts").getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
+    func loadData(Type: String, d: Firestore){
+        d.collection(Type).order(by: "Date",descending: true).getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            self.content = [BasicCell]()
+            for document in querySnapshot!.documents {
+                print("\(document.documentID) => \(document.data())")
 
-                            if let tmp = document.get("Date") as? Timestamp {
-                                if let desc = document.get("Description") as? String{
-                                    if let lnk = document.get("Link") as? String{
-                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
-                                        print(self.content)
-                                    }
-                                }
-                                
-                            }
+                if let tmp = document.get("Date") as? Timestamp {
+                    if let desc = document.get("Description") as? String{
+                        if let lnk = document.get("Link") as? String{
+                            self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
+                            print(self.content)
                         }
-                        self.tableView.reloadData()
-                        
-                    }
-                }
-                       
-                self.header = "Contacts"
-            }else if type == "Jobs"{
-                db.collection("Jobs").getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-
-                            if let tmp = document.get("Date") as? Timestamp {
-                                if let desc = document.get("Description") as? String{
-                                    if let lnk = document.get("Link") as? String{
-                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
-                                        print(self.content)
-                                    }
-                                }
-                                
-                            }
-                        }
-                        self.tableView.reloadData()
-                        
-                    }
-                }
-                self.header = "Jobs"
-                
-            }else if type == "Links"{
-                db.collection("Links").getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-
-                            if let tmp = document.get("Date") as? Timestamp {
-                                if let desc = document.get("Description") as? String{
-                                    if let lnk = document.get("Link") as? String{
-                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
-                                        print(self.content)
-                                    }
-                                }
-                                
-                            }
-                        }
-                        self.tableView.reloadData()
-                        
-                    }
-                }
-                self.header = "Links"
-            }else if type == "Misc"{
-                db.collection("Misc").getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-
-                            if let tmp = document.get("Date") as? Timestamp {
-                                if let desc = document.get("Description") as? String{
-                                    if let lnk = document.get("Link") as? String{
-                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
-                                        print(self.content)
-                                    }
-                                }
-                                
-                            }
-                        }
-                        self.tableView.reloadData()
                     }
                     
                 }
-                self.header = "Misc"
             }
+            self.header = Type
+            self.tableView.reloadData()
+            
         }
-        
+    }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if let type = t{
+            let db = Firestore.firestore()
+            self.loadData(Type: type, d: db)
+        }
         super.viewWillAppear(true)
     }
     
