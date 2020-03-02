@@ -16,6 +16,7 @@ struct Constants {
     
 }
 struct BasicCell {
+    var desc : String
     var title : String
     var date : Date
     var link : String

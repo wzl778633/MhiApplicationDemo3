@@ -52,11 +52,8 @@ class AboutVC: UITableViewController {
 
         // Configure the cell...
         cell.textLabel!.text = content[indexPath.row].title
+        cell.detailTextLabel!.text = content[indexPath.row].desc
         
-        if let detailLabel = cell.detailTextLabel {
-            let dateStr = content[indexPath.row].title.description
-            detailLabel.text = String(dateStr.prefix(20))
-        }
         
         return cell
     }
@@ -77,7 +74,7 @@ class AboutVC: UITableViewController {
                 if let tmp = document.get("Date") as? Timestamp {
                     if let desc = document.get("Description") as? String{
                         if let lnk = document.get("Link") as? String{
-                            self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
+                            self.content.append(BasicCell(desc: desc, title: document.documentID, date: tmp.dateValue(), link: lnk))
                             print(self.content)
                         }
                     }
