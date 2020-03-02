@@ -17,13 +17,16 @@ class UpdateLinkVC: UIViewController {
     @IBOutlet weak var linkTextfield: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     var docRef : DocumentReference!
+    let alertController = UIAlertController(title: "Success!", message: "This link has been successfully added!", preferredStyle: .alert)
+    
     override func viewDidLoad() {
           super.viewDidLoad()
-
           setUpElements()
-          // Do any additional setup after loading the view.
-          
+        
+        alertController.addAction(UIAlertAction(title: "OK", style: .destructive, handler: {(alertAction) in self.dismissVC()}))
+       
       }
+    
     @IBAction func saveTapped(_ sender: UIButton) {
         let db = Firestore.firestore()
         let error = validateFields()
@@ -47,18 +50,20 @@ class UpdateLinkVC: UIViewController {
                 self.showError("Error! cannot store this link to database: \(error.localizedDescription)")
             }else {
                 //Need to be changed!
-               self.showError("Success!")
+                //self.showError("Success!")
                 self.linkNameTextfield.isUserInteractionEnabled = false
                 self.descriptionTextfield.isUserInteractionEnabled = false
                 self.linkTextfield.isUserInteractionEnabled = false
-                self.navigationController?.popViewController(animated: true)
+                self.present(self.alertController,animated: true,completion: nil)
             }
             
         }
         }
         }
     }
-    
+    func dismissVC(){
+        self.navigationController?.popViewController(animated: true)
+    }
     func setUpElements(){
             errorLabel.alpha = 0;
            // Style the elements
