@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
         // Style the elements
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
+        passwordTextField.isSecureTextEntry = true;
         Utilities.styleFilledButton(loginButton)
     }
 

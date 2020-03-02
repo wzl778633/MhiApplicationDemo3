@@ -76,7 +76,7 @@ class AboutVC: UITableViewController {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
 
-                            if let tmp = document.get("Time") as? Timestamp {
+                            if let tmp = document.get("Date") as? Timestamp {
                                 if let desc = document.get("Description") as? String{
                                     if let lnk = document.get("Link") as? String{
                                         self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
@@ -100,7 +100,7 @@ class AboutVC: UITableViewController {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
 
-                            if let tmp = document.get("Time") as? Timestamp {
+                            if let tmp = document.get("Date") as? Timestamp {
                                 if let desc = document.get("Description") as? String{
                                     if let lnk = document.get("Link") as? String{
                                         self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
@@ -124,7 +124,7 @@ class AboutVC: UITableViewController {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
 
-                            if let tmp = document.get("Time") as? Timestamp {
+                            if let tmp = document.get("Date") as? Timestamp {
                                 if let desc = document.get("Description") as? String{
                                     if let lnk = document.get("Link") as? String{
                                         self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
@@ -147,7 +147,7 @@ class AboutVC: UITableViewController {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
 
-                            if let tmp = document.get("Time") as? Timestamp {
+                            if let tmp = document.get("Date") as? Timestamp {
                                 if let desc = document.get("Description") as? String{
                                     if let lnk = document.get("Link") as? String{
                                         self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))

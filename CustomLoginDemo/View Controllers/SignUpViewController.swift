@@ -36,6 +36,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
+        passwordTextField.isSecureTextEntry = true;
         Utilities.styleFilledButton(signUpButton)
     }
 

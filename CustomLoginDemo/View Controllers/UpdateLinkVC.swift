@@ -48,6 +48,11 @@ class UpdateLinkVC: UIViewController {
             }else {
                 //Need to be changed!
                self.showError("Success!")
+                self.linkNameTextfield.isUserInteractionEnabled = false
+                self.descriptionTextfield.isUserInteractionEnabled = false
+                self.linkTextfield.isUserInteractionEnabled = false
+                
+                
             }
             
         }

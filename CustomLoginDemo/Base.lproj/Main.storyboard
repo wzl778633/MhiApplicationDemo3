@@ -365,13 +365,13 @@
                                 <state key="normal" image="plus" catalog="system"/>
                                 <connections>
                                     <action selector="performUpdate:" destination="YME-yt-BkJ" eventType="touchUpInside" id="0Yv-E1-0ix"/>
-                                    <segue destination="6sJ-aj-k9S" kind="show" identifier="segUpdate" id="Oee-sW-QDX"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="updateButton" destination="4XR-wh-tlg" id="wir-kA-0wG"/>
+                        <segue destination="6sJ-aj-k9S" kind="show" identifier="segUpdate" id="qRg-o7-bCJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqe-kT-om1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -54,9 +54,13 @@ class Utilities {
     
     static func isGoodUrl(urlString: String?)-> Bool {
         if let urlString = urlString{
-            if let url = NSURL(string : urlString){
-                if UIApplication.shared.canOpenURL(url as URL){
-                    return url.checkResourceIsReachableAndReturnError(<#T##error: NSErrorPointer##NSErrorPointer#>)
+            let check = "http://\(urlString)"
+            if NSData(contentsOf: NSURL(string : check)! as URL) != nil{
+                return true;
+            }else{
+                let check2 = "https://\(urlString)"
+                if NSData(contentsOf: NSURL(string : check2)! as URL) != nil{
+                    return true;
                 }
             }
         }
