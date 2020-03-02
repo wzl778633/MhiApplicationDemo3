@@ -78,7 +78,7 @@ class AboutVC: UITableViewController {
 
                             if let tmp = document.get("Time") as? Timestamp {
                                 if let desc = document.get("Description") as? String{
-                                    if let lnk = document.get("link") as? String{
+                                    if let lnk = document.get("Link") as? String{
                                         self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
                                         print(self.content)
                                     }
@@ -99,9 +99,16 @@ class AboutVC: UITableViewController {
                     } else {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
-                            let tmp = document.get("Date") as! Timestamp
-                            self.content.append(BasicCell(title: document.get("Name") as! String, date: tmp.dateValue(), link: document.get("Link") as! String))
-                            
+
+                            if let tmp = document.get("Time") as? Timestamp {
+                                if let desc = document.get("Description") as? String{
+                                    if let lnk = document.get("Link") as? String{
+                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
+                                        print(self.content)
+                                    }
+                                }
+                                
+                            }
                         }
                         self.tableView.reloadData()
                         
@@ -116,9 +123,16 @@ class AboutVC: UITableViewController {
                     } else {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
-                            let tmp = document.get("Date") as! Timestamp
-                            self.content.append(BasicCell(title: document.get("Name") as! String, date: tmp.dateValue(), link: document.get("Link") as! String))
-                            
+
+                            if let tmp = document.get("Time") as? Timestamp {
+                                if let desc = document.get("Description") as? String{
+                                    if let lnk = document.get("Link") as? String{
+                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
+                                        print(self.content)
+                                    }
+                                }
+                                
+                            }
                         }
                         self.tableView.reloadData()
                         
@@ -132,9 +146,16 @@ class AboutVC: UITableViewController {
                     } else {
                         for document in querySnapshot!.documents {
                             print("\(document.documentID) => \(document.data())")
-                            let tmp = document.get("Date") as! Timestamp
-                            self.content.append(BasicCell(title: document.get("Name") as! String, date: tmp.dateValue(), link: document.get("Link") as! String))
-                            
+
+                            if let tmp = document.get("Time") as? Timestamp {
+                                if let desc = document.get("Description") as? String{
+                                    if let lnk = document.get("Link") as? String{
+                                        self.content.append(BasicCell(title: desc, date: tmp.dateValue(), link: lnk))
+                                        print(self.content)
+                                    }
+                                }
+                                
+                            }
                         }
                         self.tableView.reloadData()
                     }
