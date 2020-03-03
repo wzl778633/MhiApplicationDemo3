@@ -13,6 +13,21 @@ target 'CustomLoginDemo' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
 
+  target 'CustomLoginDemoTests' do
+    inherit! :search_paths
+    pod 'Firebase'
+    end
+  target 'CustomLoginDemoUITests' do
+  inherit! :search_paths
+  pod 'Firebase'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  end
+
 # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
 end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26F780F1240C4D2700508EA3 /* UpdateLinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */; };
+		26F98B79240E27C900F2934C /* CustomLoginDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F98B78240E27C900F2934C /* CustomLoginDemoTests.swift */; };
+		26F98B87240E31B100F2934C /* CustomLoginDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F98B86240E31B100F2934C /* CustomLoginDemoUITests.swift */; };
 		44FE5D942409B99400C83B17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5D932409B99400C83B17 /* AppDelegate.swift */; };
 		44FE5D962409B99400C83B17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5D952409B99400C83B17 /* SceneDelegate.swift */; };
 		44FE5D982409B99400C83B17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5D972409B99400C83B17 /* ViewController.swift */; };
@@ -24,11 +26,42 @@
 		8055BABE2D9229C01862ECBB /* Pods_CustomLoginDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59849AB86BE4C2A0DADA216 /* Pods_CustomLoginDemo.framework */; };
 		AF47E7C6240BF48700E78F60 /* MenuNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */; };
 		AF47E7CD240C03CA00E78F60 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47E7CC240C03CA00E78F60 /* AboutVC.swift */; };
+		D52D92A76E0E58FCEA4D996A /* Pods_CustomLoginDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B68093F3F3E02AC6D491DF /* Pods_CustomLoginDemoUITests.framework */; };
+		D6B0D253C8BFCBED76FB11E2 /* Pods_CustomLoginDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809A2AECE4FD49A9584A832B /* Pods_CustomLoginDemoTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		26F98B7B240E27C900F2934C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44FE5D882409B99400C83B17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44FE5D8F2409B99400C83B17;
+			remoteInfo = CustomLoginDemo;
+		};
+		26F98B89240E31B100F2934C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44FE5D882409B99400C83B17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44FE5D8F2409B99400C83B17;
+			remoteInfo = CustomLoginDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		088450707C90C9610DA72F7B /* Pods-CustomLoginDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemoUITests/Pods-CustomLoginDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0FE4DD51A80DCEC807A5654D /* Pods-CustomLoginDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemo.debug.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		11C5E2B8F59F1191C408A35E /* Pods-CustomLoginDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemoTests/Pods-CustomLoginDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLinkVC.swift; sourceTree = "<group>"; };
+		26F98B76240E27C900F2934C /* CustomLoginDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomLoginDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F98B78240E27C900F2934C /* CustomLoginDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginDemoTests.swift; sourceTree = "<group>"; };
+		26F98B7A240E27C900F2934C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F98B84240E31B100F2934C /* CustomLoginDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomLoginDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F98B86240E31B100F2934C /* CustomLoginDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginDemoUITests.swift; sourceTree = "<group>"; };
+		26F98B88240E31B100F2934C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F98B8E240E370A00F2934C /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F98B90240E376D00F2934C /* absl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = absl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE4A69DF75DA5755A446EBA /* Pods-CustomLoginDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemoTests/Pods-CustomLoginDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		38BF10F2673E9B7231BDF27D /* Pods-CustomLoginDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemoUITests/Pods-CustomLoginDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		44FE5D902409B99400C83B17 /* CustomLoginDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomLoginDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FE5D932409B99400C83B17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FE5D952409B99400C83B17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +77,8 @@
 		44FE5DB12409D24E00C83B17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44FE5DB32409F21300C83B17 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		44FE5DB6240A02FC00C83B17 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		809A2AECE4FD49A9584A832B /* Pods_CustomLoginDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomLoginDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B68093F3F3E02AC6D491DF /* Pods_CustomLoginDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomLoginDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNaviViewController.swift; sourceTree = "<group>"; };
 		AF47E7CC240C03CA00E78F60 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		E59849AB86BE4C2A0DADA216 /* Pods_CustomLoginDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomLoginDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +86,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		26F98B73240E27C900F2934C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6B0D253C8BFCBED76FB11E2 /* Pods_CustomLoginDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F98B81240E31B100F2934C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D52D92A76E0E58FCEA4D996A /* Pods_CustomLoginDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44FE5D8D2409B99400C83B17 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,9 +116,31 @@
 		0DAEC1CE8C8E41598ABDCA79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26F98B90240E376D00F2934C /* absl.framework */,
+				26F98B8E240E370A00F2934C /* GTMSessionFetcher.framework */,
 				E59849AB86BE4C2A0DADA216 /* Pods_CustomLoginDemo.framework */,
+				809A2AECE4FD49A9584A832B /* Pods_CustomLoginDemoTests.framework */,
+				A1B68093F3F3E02AC6D491DF /* Pods_CustomLoginDemoUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26F98B77240E27C900F2934C /* CustomLoginDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				26F98B78240E27C900F2934C /* CustomLoginDemoTests.swift */,
+				26F98B7A240E27C900F2934C /* Info.plist */,
+			);
+			path = CustomLoginDemoTests;
+			sourceTree = "<group>";
+		};
+		26F98B85240E31B100F2934C /* CustomLoginDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				26F98B86240E31B100F2934C /* CustomLoginDemoUITests.swift */,
+				26F98B88240E31B100F2934C /* Info.plist */,
+			);
+			path = CustomLoginDemoUITests;
 			sourceTree = "<group>";
 		};
 		44FE5D872409B99400C83B17 = {
@@ -75,6 +148,8 @@
 			children = (
 				44FE5DB5240A01A600C83B17 /* media */,
 				44FE5D922409B99400C83B17 /* CustomLoginDemo */,
+				26F98B77240E27C900F2934C /* CustomLoginDemoTests */,
+				26F98B85240E31B100F2934C /* CustomLoginDemoUITests */,
 				44FE5D912409B99400C83B17 /* Products */,
 				5868AF40E686430F52D1AF73 /* Pods */,
 				0DAEC1CE8C8E41598ABDCA79 /* Frameworks */,
@@ -85,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				44FE5D902409B99400C83B17 /* CustomLoginDemo.app */,
+				26F98B76240E27C900F2934C /* CustomLoginDemoTests.xctest */,
+				26F98B84240E31B100F2934C /* CustomLoginDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +218,10 @@
 			children = (
 				0FE4DD51A80DCEC807A5654D /* Pods-CustomLoginDemo.debug.xcconfig */,
 				EDE8FDCE3DD0C17777E1C28E /* Pods-CustomLoginDemo.release.xcconfig */,
+				2FE4A69DF75DA5755A446EBA /* Pods-CustomLoginDemoTests.debug.xcconfig */,
+				11C5E2B8F59F1191C408A35E /* Pods-CustomLoginDemoTests.release.xcconfig */,
+				38BF10F2673E9B7231BDF27D /* Pods-CustomLoginDemoUITests.debug.xcconfig */,
+				088450707C90C9610DA72F7B /* Pods-CustomLoginDemoUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -148,6 +229,46 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		26F98B75240E27C900F2934C /* CustomLoginDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F98B7D240E27C900F2934C /* Build configuration list for PBXNativeTarget "CustomLoginDemoTests" */;
+			buildPhases = (
+				0312881720AA854F6C49E657 /* [CP] Check Pods Manifest.lock */,
+				26F98B72240E27C900F2934C /* Sources */,
+				26F98B73240E27C900F2934C /* Frameworks */,
+				26F98B74240E27C900F2934C /* Resources */,
+				D2DDD5D63B0E92BFCDA9CEDF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26F98B7C240E27C900F2934C /* PBXTargetDependency */,
+			);
+			name = CustomLoginDemoTests;
+			productName = CustomLoginDemoTests;
+			productReference = 26F98B76240E27C900F2934C /* CustomLoginDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		26F98B83240E31B100F2934C /* CustomLoginDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F98B8D240E31B100F2934C /* Build configuration list for PBXNativeTarget "CustomLoginDemoUITests" */;
+			buildPhases = (
+				C8598D58CF07F79296B6B1F6 /* [CP] Check Pods Manifest.lock */,
+				26F98B80240E31B100F2934C /* Sources */,
+				26F98B81240E31B100F2934C /* Frameworks */,
+				26F98B82240E31B100F2934C /* Resources */,
+				B591041BDFCF9E34C872B521 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26F98B8A240E31B100F2934C /* PBXTargetDependency */,
+			);
+			name = CustomLoginDemoUITests;
+			productName = CustomLoginDemoUITests;
+			productReference = 26F98B84240E31B100F2934C /* CustomLoginDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		44FE5D8F2409B99400C83B17 /* CustomLoginDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44FE5DA42409B99600C83B17 /* Build configuration list for PBXNativeTarget "CustomLoginDemo" */;
@@ -177,6 +298,14 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "wang songtao";
 				TargetAttributes = {
+					26F98B75240E27C900F2934C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 44FE5D8F2409B99400C83B17;
+					};
+					26F98B83240E31B100F2934C = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 44FE5D8F2409B99400C83B17;
+					};
 					44FE5D8F2409B99400C83B17 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -196,11 +325,27 @@
 			projectRoot = "";
 			targets = (
 				44FE5D8F2409B99400C83B17 /* CustomLoginDemo */,
+				26F98B75240E27C900F2934C /* CustomLoginDemoTests */,
+				26F98B83240E31B100F2934C /* CustomLoginDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		26F98B74240E27C900F2934C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F98B82240E31B100F2934C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44FE5D8E2409B99400C83B17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +361,84 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0312881720AA854F6C49E657 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CustomLoginDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B591041BDFCF9E34C872B521 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemoUITests/Pods-CustomLoginDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemoUITests/Pods-CustomLoginDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemoUITests/Pods-CustomLoginDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8598D58CF07F79296B6B1F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CustomLoginDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2DDD5D63B0E92BFCDA9CEDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemoTests/Pods-CustomLoginDemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemoTests/Pods-CustomLoginDemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemoTests/Pods-CustomLoginDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DA488156AF409525A4963256 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +481,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		26F98B72240E27C900F2934C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F98B79240E27C900F2934C /* CustomLoginDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F98B80240E31B100F2934C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F98B87240E31B100F2934C /* CustomLoginDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		44FE5D8C2409B99400C83B17 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +516,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26F98B7C240E27C900F2934C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44FE5D8F2409B99400C83B17 /* CustomLoginDemo */;
+			targetProxy = 26F98B7B240E27C900F2934C /* PBXContainerItemProxy */;
+		};
+		26F98B8A240E31B100F2934C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44FE5D8F2409B99400C83B17 /* CustomLoginDemo */;
+			targetProxy = 26F98B89240E31B100F2934C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		44FE5D992409B99400C83B17 /* Main.storyboard */ = {
@@ -298,6 +550,204 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		26F98B7E240E27C900F2934C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FE4A69DF75DA5755A446EBA /* Pods-CustomLoginDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift/FirebaseFirestoreSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"${PODS_ROOT}/FirebaseCore/Firebase/Core/Public",
+				);
+				INFOPLIST_FILE = CustomLoginDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMBS.CustomLoginDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomLoginDemo.app/CustomLoginDemo";
+			};
+			name = Debug;
+		};
+		26F98B7F240E27C900F2934C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11C5E2B8F59F1191C408A35E /* Pods-CustomLoginDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift/FirebaseFirestoreSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"${PODS_ROOT}/FirebaseCore/Firebase/Core/Public",
+				);
+				INFOPLIST_FILE = CustomLoginDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMBS.CustomLoginDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomLoginDemo.app/CustomLoginDemo";
+			};
+			name = Release;
+		};
+		26F98B8B240E31B100F2934C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38BF10F2673E9B7231BDF27D /* Pods-CustomLoginDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift/FirebaseFirestoreSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"${PODS_ROOT}/FirebaseCore/Firebase/Core/Public",
+					"${SRCROOT}/Pods/Target",
+					Support,
+					"${SRCROOT}/Pods/Target",
+					Support,
+				);
+				INFOPLIST_FILE = CustomLoginDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMBS.CustomLoginDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CustomLoginDemo;
+			};
+			name = Debug;
+		};
+		26F98B8C240E31B100F2934C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 088450707C90C9610DA72F7B /* Pods-CustomLoginDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift/FirebaseFirestoreSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+					"${PODS_ROOT}/FirebaseCore/Firebase/Core/Public",
+					"${SRCROOT}/Pods/Target",
+					Support,
+					"${SRCROOT}/Pods/Target",
+					Support,
+				);
+				INFOPLIST_FILE = CustomLoginDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = NMBS.CustomLoginDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CustomLoginDemo;
+			};
+			name = Release;
+		};
 		44FE5DA22409B99600C83B17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,6 +868,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift/FirebaseFirestoreSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+				);
 				INFOPLIST_FILE = CustomLoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +913,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC/openssl_grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth/FirebaseAuth.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore/FirebaseCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/FirebaseFirestore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestoreSwift/FirebaseFirestoreSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations/FirebaseInstallations.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport/GoogleDataTransport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport/GoogleDataTransportCCTSupport.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC/FBLPromises.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil/absl.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/grpcpp.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core/grpc.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library/leveldb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuthInterop\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCoreDiagnosticsInterop\"",
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
+				);
 				INFOPLIST_FILE = CustomLoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,6 +955,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		26F98B7D240E27C900F2934C /* Build configuration list for PBXNativeTarget "CustomLoginDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26F98B7E240E27C900F2934C /* Debug */,
+				26F98B7F240E27C900F2934C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26F98B8D240E31B100F2934C /* Build configuration list for PBXNativeTarget "CustomLoginDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26F98B8B240E31B100F2934C /* Debug */,
+				26F98B8C240E31B100F2934C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		44FE5D8B2409B99400C83B17 /* Build configuration list for PBXProject "CustomLoginDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
