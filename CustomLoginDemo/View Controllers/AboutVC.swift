@@ -64,15 +64,43 @@ class AboutVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let doc = self.content[indexPath.row].title
-        
-        
 
-        let delete = UIContextualAction(style: .normal, title: "Delete"){  (contextualAction, view, boolValue) in
+        let delete = UIContextualAction(style: .destructive, title: "Delete"){  (contextualAction, view, boolValue) in
             let alertController = UIAlertController(title: "Delete this link?", message: "Are you really want to delete this link?", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(alertAction) in self.deleteDoc(title: doc)}))
-                
+            alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(alertAction) in self.deleteDoc(title: doc)
+            }))
+           
             self.present(alertController,animated: true,completion: nil)
+            
+        }
+        
+        let update = UIContextualAction(style: .destructive, title: "Update") {  (contextualAction, view, boolValue) in
+            let updateController = UIAlertController(title: "Update this link", message: "Enter the infomation for update", preferredStyle: .alert)
+            updateController.addTextField()
+            updateController.addTextField()
+            
+            updateController.textFields![0].placeholder = "Description"
+            updateController.textFields![1].placeholder = "Link"
+            
+            
+            updateController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            updateController.addAction(UIAlertAction(title: "Update", style: .destructive, handler: {(alertAction) in
+                let des = updateController.textFields![0].text
+                let lnk = updateController.textFields![1].text
+                if Utilities.isGoodUrl(urlString: lnk) == false{
+                    
+                    let updateErrorController = UIAlertController(title: "Update Fail", message: "Please enter a vaild link!", preferredStyle: .alert)
+                    updateErrorController.addAction(UIAlertAction(title: "I know it's my mistake:(", style: .default, handler: {(alertAction) in
+                        self.present(updateController,animated: true,completion: nil)
+                    }))
+                    self.present(updateErrorController,animated: true,completion: nil)
+                }else{
+                    self.updateDoc(title: doc, des: des!, link: lnk!)
+                }
+            }))
+            self.present(updateController,animated: true,completion: nil)
+            
         }
         
         let open = UIContextualAction(style: .normal, title: "Open") {  (contextualAction, view, boolValue) in
@@ -81,9 +109,11 @@ class AboutVC: UITableViewController {
                            UIApplication.shared.openURL(url as URL)
                        }
         }
+        
         delete.backgroundColor = UIColor.red
+        update.backgroundColor = UIColor.orange
         open.backgroundColor = UIColor.init(red: 0/255, green: 200/255, blue: 0/255, alpha: 1)
-        let swipeActions = UISwipeActionsConfiguration(actions: [delete,open])
+        let swipeActions = UISwipeActionsConfiguration(actions: [delete,open,update])
         return swipeActions
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
@@ -111,6 +141,8 @@ class AboutVC: UITableViewController {
                 }
             }
             self.header = Type
+           
+                         
             self.tableView.reloadData()
             
         }
@@ -127,15 +159,20 @@ class AboutVC: UITableViewController {
     
     
     func deleteDoc(title : String){
-        if let db = self.db{
-            if let Type = self.t{
-                db.collection(Type).document(title).delete()
-                self.tableView.reloadData()
-            }
-        }
+            let d = Firestore.firestore()
+           d.collection(self.t!).document(title).delete()
+            self.loadData(Type: self.t!, d: d)
+                
+            
+        
     }
     
-
+    func updateDoc(title: String, des : String, link:String){
+            let d = Firestore.firestore()
+        d.collection(self.t!).document(title).updateData(["Description":des, "Link":link,"Date": Timestamp.init()])
+            self.loadData(Type: self.t!, d: d)
+        
+    }
     
     /*
     // Override to support conditional editing of the table view.
