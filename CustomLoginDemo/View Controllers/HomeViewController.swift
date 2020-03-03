@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
@@ -40,7 +41,23 @@ class HomeViewController: UIViewController {
 
        }
        
+    @IBAction func signOutTapped(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+        }catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        let vc : ViewController = self.storyboard?.instantiateViewController(withIdentifier: "VC") as! ViewController
+        let navigationController = UINavigationController(rootViewController: vc)
+        vc.modalPresentationStyle = .fullScreen
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController,animated: true,completion: nil)
 
+        
+        
+
+    }
+    
        
        // MARK: - Navigation
 

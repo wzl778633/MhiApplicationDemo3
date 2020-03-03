@@ -305,6 +305,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jhg-qS-qop">
                         <barButtonItem key="backBarButtonItem" title="Main Menu" id="6Rm-7J-EsV"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Tv4-d0-9Os">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BxB-cK-tZJ">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="w0Y-ja-mLp" eventType="touchUpInside" id="mzC-Ni-6gW"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ContactsButton" destination="2nr-TS-PUT" id="aey-qc-26G"/>
