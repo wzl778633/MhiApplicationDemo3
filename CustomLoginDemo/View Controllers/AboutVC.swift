@@ -16,14 +16,18 @@ class AboutVC: UITableViewController {
     var header : String?
     var t : String?
     var db : Firestore?
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      
+                      
         
         
         
@@ -58,10 +62,35 @@ class AboutVC: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let doc = self.content[indexPath.row].title
+        
+        
+
+        let delete = UIContextualAction(style: .normal, title: "Delete"){  (contextualAction, view, boolValue) in
+            let alertController = UIAlertController(title: "Delete this link?", message: "Are you really want to delete this link?", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(alertAction) in self.deleteDoc(title: doc)}))
+                
+            self.present(alertController,animated: true,completion: nil)
+        }
+        
+        let open = UIContextualAction(style: .normal, title: "Open") {  (contextualAction, view, boolValue) in
+            let url = Utilities.getGoodUrl(urlString: self.content[indexPath.row].link)
+            if let url = NSURL(string: url!){
+                           UIApplication.shared.openURL(url as URL)
+                       }
+        }
+        delete.backgroundColor = UIColor.red
+        open.backgroundColor = UIColor.init(red: 0/255, green: 200/255, blue: 0/255, alpha: 1)
+        let swipeActions = UISwipeActionsConfiguration(actions: [delete,open])
+        return swipeActions
+    }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
         return self.header
     }
+    
     func loadData(Type: String, d: Firestore){
         d.collection(Type).order(by: "Date",descending: true).getDocuments() { (querySnapshot, err) in
         if let err = err {
@@ -93,12 +122,21 @@ class AboutVC: UITableViewController {
             self.loadData(Type: type, d: db)
         }
         super.viewWillAppear(true)
+        
     }
     
     
-
+    func deleteDoc(title : String){
+        if let db = self.db{
+            if let Type = self.t{
+                db.collection(Type).document(title).delete()
+                self.tableView.reloadData()
+            }
+        }
+    }
     
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

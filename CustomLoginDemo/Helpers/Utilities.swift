@@ -67,4 +67,20 @@ class Utilities {
         return false
     }
     
+    static func getGoodUrl(urlString: String?)-> String? {
+        let null = ""
+        if let urlString = urlString{
+            let check = "http://\(urlString)"
+            if NSData(contentsOf: NSURL(string : check)! as URL) != nil{
+                return check;
+            }else{
+                let check2 = "https://\(urlString)"
+                if NSData(contentsOf: NSURL(string : check2)! as URL) != nil{
+                    return check2;
+                }
+            }
+        }
+        return null
+    }
+    
 }
