@@ -23,9 +23,35 @@ class CustomLoginDemoTests: XCTestCase {
         super.tearDown()
     }
 
-    func tabletest() {
+    func testInvalidPassword() {
+        XCTAssertFalse(Utilities.isPasswordValid("abcd"))
+        XCTAssertFalse(Utilities.isPasswordValid("Abc123456"))
+        XCTAssertFalse(Utilities.isPasswordValid("abc123456"))
+        XCTAssertFalse(Utilities.isPasswordValid("A-2"))
+        XCTAssertFalse(Utilities.isPasswordValid("nfdif"))
+        
         
     }
-
     
+    func testValidPassword()
+    {
+        XCTAssert(Utilities.isPasswordValid("Abc!123456"))
+        XCTAssert(Utilities.isPasswordValid("Ydq-980304"))
+        XCTAssert(Utilities.isPasswordValid("ydq-980304"))
+        XCTAssert(Utilities.isPasswordValid("Gc_13869601298"))
+    }
+    
+    func testGoodURL()
+    {
+        XCTAssert(Utilities.isGoodUrl(urlString: "www.google.com"))
+        XCTAssert(Utilities.isGoodUrl(urlString: "www.google.com"))
+        XCTAssert(Utilities.isGoodUrl(urlString: "https://www.google.com"))
+        
+    }
+    
+    func testBadURL(){
+        XCTAssertFalse(Utilities.isGoodUrl(urlString: "www.google"))
+        XCTAssertFalse(Utilities.isGoodUrl(urlString: "gdjaskp"))
+        XCTAssertFalse(Utilities.isGoodUrl(urlString: "www.totallynonsense.com"))
+    }
 }

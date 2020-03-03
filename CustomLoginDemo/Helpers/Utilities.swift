@@ -48,19 +48,23 @@ class Utilities {
     
     static func isPasswordValid(_ password : String) -> Bool {
         
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[.,$@$#!%*?&])[A-Za-z\\d$@$#!%*?&.,]{8,}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[-_.,$@$#!%*?&])[A-Za-z\\d-_.,$@$#!%*?&]{8,}")
         return passwordTest.evaluate(with: password)
     }
     
     static func isGoodUrl(urlString: String?)-> Bool {
         if let urlString = urlString{
-            let check = "http://\(urlString)"
-            if NSData(contentsOf: NSURL(string : check)! as URL) != nil{
-                return true;
+            if NSData(contentsOf: NSURL(string : urlString)! as URL) != nil{
+                return true
             }else{
-                let check2 = "https://\(urlString)"
-                if NSData(contentsOf: NSURL(string : check2)! as URL) != nil{
+                let check = "http://\(urlString)"
+                if NSData(contentsOf: NSURL(string : check)! as URL) != nil{
                     return true;
+                }else{
+                    let check2 = "https://\(urlString)"
+                    if NSData(contentsOf: NSURL(string : check2)! as URL) != nil{
+                        return true;
+                    }
                 }
             }
         }
@@ -70,15 +74,20 @@ class Utilities {
     static func getGoodUrl(urlString: String?)-> String? {
         let null = ""
         if let urlString = urlString{
-            let check = "http://\(urlString)"
-            if NSData(contentsOf: NSURL(string : check)! as URL) != nil{
-                return check;
+            if NSData(contentsOf: NSURL(string : urlString)! as URL) != nil{
+                return urlString
             }else{
-                let check2 = "https://\(urlString)"
-                if NSData(contentsOf: NSURL(string : check2)! as URL) != nil{
-                    return check2;
+                let check = "http://\(urlString)"
+                if NSData(contentsOf: NSURL(string : check)! as URL) != nil{
+                    return check;
+                }else{
+                    let check2 = "https://\(urlString)"
+                    if NSData(contentsOf: NSURL(string : check2)! as URL) != nil{
+                        return check2;
+                    }
                 }
             }
+           
         }
         return null
     }

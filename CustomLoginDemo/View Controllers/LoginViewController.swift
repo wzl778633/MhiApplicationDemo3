@@ -53,22 +53,32 @@ class LoginViewController: UIViewController {
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         // Signing in the user
+        
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             
             if error != nil{
                 // Couldn't sign in
                 self.errorLabel.text = error!.localizedDescription
-                self.errorLabel.alpha = 1
+                self.errorLabel.alpha = 13
             }
             else {
                                
+
                 let vc : HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
                 let navigationController = UINavigationController(rootViewController: vc)
                 vc.modalPresentationStyle = .fullScreen
                 navigationController.modalPresentationStyle = .fullScreen
                 self.present(navigationController,animated: true,completion: nil)
             }
+            
         }
+
+        
+    }
+    
+    func login(email: String,password: String) {
+
+        
     }
     
 }

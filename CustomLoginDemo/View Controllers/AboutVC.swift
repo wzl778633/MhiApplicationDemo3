@@ -81,7 +81,7 @@ class AboutVC: UITableViewController {
             updateController.addTextField()
             
             updateController.textFields![0].placeholder = "Description"
-            updateController.textFields![1].placeholder = "Link"
+            updateController.textFields![1].placeholder = "Link(check automatically)"
             
             
             updateController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
