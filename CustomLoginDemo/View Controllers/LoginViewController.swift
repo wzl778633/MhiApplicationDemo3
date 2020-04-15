@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
             else {
                                
 
-                let vc : HomeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+                let vc : UITabBarController = self.storyboard?.instantiateViewController(withIdentifier: "TabVC") as! UITabBarController
                 let navigationController = UINavigationController(rootViewController: vc)
                 vc.modalPresentationStyle = .fullScreen
                 navigationController.modalPresentationStyle = .fullScreen
