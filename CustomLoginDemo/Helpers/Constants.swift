@@ -21,3 +21,8 @@ struct BasicCell {
     var date : Date
     var link : String
 }
+struct MeetingCell {
+    var title : String
+    var date : Date
+    var link : String
+}
