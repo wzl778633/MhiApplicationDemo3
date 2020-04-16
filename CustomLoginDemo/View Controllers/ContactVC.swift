@@ -8,16 +8,19 @@
 
 import UIKit
 import Firebase
-
+import FirebaseAuth
 class ContactVC: UITableViewController {
 
     @IBOutlet weak var updateButton: UIButton!
     var content = [MeetingCell]()
-    var header : String?
-    var t : String?
+    var header = "Meeting"
+    var t = "Meeting"
     var db : Firestore?
     
-  
+    var docRef : DocumentReference!
+   
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,7 @@ class ContactVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
+        print(self.content)
         // Configure the cell...
         cell.textLabel!.text = content[indexPath.row].title
         cell.detailTextLabel!.text = content[indexPath.row].date.description
@@ -61,49 +65,34 @@ class ContactVC: UITableViewController {
         
         return cell
     }
-    /*
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let doc = self.content[indexPath.row].title
 
-        let delete = UIContextualAction(style: .destructive, title: "Delete"){  (contextualAction, view, boolValue) in
-            let alertController = UIAlertController(title: "Delete this link?", message: "Are you really want to delete this link?", preferredStyle: .alert)
+        let exit = UIContextualAction(style: .destructive, title: "Exit"){  (contextualAction, view, boolValue) in
+            let alertController = UIAlertController(title: "Exit this meeting?", message: "Are you really want to exit this meeting?", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alertController.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {(alertAction) in self.deleteDoc(title: doc)
+            alertController.addAction(UIAlertAction(title: "Say Goodbay", style: .destructive, handler: {(alertAction) in
+                    self.exitDoc(title: doc)
             }))
            
             self.present(alertController,animated: true,completion: nil)
             
         }
         
-        let update = UIContextualAction(style: .destructive, title: "Update") {  (contextualAction, view, boolValue) in
-            let updateController = UIAlertController(title: "Update this link", message: "Enter the infomation for update", preferredStyle: .alert)
-            updateController.addTextField()
-            updateController.addTextField()
-            
-            updateController.textFields![0].placeholder = "Description"
-            updateController.textFields![1].placeholder = "Link(check automatically)"
-            
-            
-            updateController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            updateController.addAction(UIAlertAction(title: "Update", style: .destructive, handler: {(alertAction) in
-                let des = updateController.textFields![0].text
-                let lnk = updateController.textFields![1].text
-                if Utilities.isGoodUrl(urlString: lnk) == false{
-                    
-                    let updateErrorController = UIAlertController(title: "Update Fail", message: "Please enter a vaild link!", preferredStyle: .alert)
-                    updateErrorController.addAction(UIAlertAction(title: "I know it's my mistake:(", style: .default, handler: {(alertAction) in
-                        self.present(updateController,animated: true,completion: nil)
-                    }))
-                    self.present(updateErrorController,animated: true,completion: nil)
-                }else{
-                    self.updateDoc(title: doc, des: des!, link: lnk!)
-                }
-            }))
-            self.present(updateController,animated: true,completion: nil)
-            
-        }
+        let delete = UIContextualAction(style: .destructive, title: "Delete"){  (contextualAction, view, boolValue) in
+                   let alertController = UIAlertController(title: "Delete this meeting?", message: "Are you really want to Delete this meeting?", preferredStyle: .alert)
+                   alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                   alertController.addAction(UIAlertAction(title: "DELETE", style: .destructive, handler: {(alertAction) in
+                           self.deleteDoc(title: doc)
+                   }))
+                  
+                   self.present(alertController,animated: true,completion: nil)
+                   
+               }
+       
         
-        let open = UIContextualAction(style: .normal, title: "Open") {  (contextualAction, view, boolValue) in
+        let open = UIContextualAction(style: .normal, title: "Join") {  (contextualAction, view, boolValue) in
             let url = Utilities.getGoodUrl(urlString: self.content[indexPath.row].link)
             if let url = NSURL(string: url!){
                            UIApplication.shared.openURL(url as URL)
@@ -111,12 +100,12 @@ class ContactVC: UITableViewController {
         }
         
         delete.backgroundColor = UIColor.red
-        update.backgroundColor = UIColor.orange
+        exit.backgroundColor = UIColor.orange
         open.backgroundColor = UIColor.init(red: 0/255, green: 200/255, blue: 0/255, alpha: 1)
-        let swipeActions = UISwipeActionsConfiguration(actions: [delete,open,update])
+        let swipeActions = UISwipeActionsConfiguration(actions: [exit,delete,open])
         return swipeActions
     }
- */
+ 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
                                 section: Int) -> String? {
         return self.header
@@ -129,48 +118,79 @@ class ContactVC: UITableViewController {
         } else {
             self.content = [MeetingCell]()
             for document in querySnapshot!.documents {
-                print("\(document.documentID) => \(document.data())")
-
-                if let tmp = document.get("time") as? Timestamp {
-                    if let desc = document.get("Zoom") as? String{
-                        self.content.append(MeetingCell(title: document.documentID, date: tmp.dateValue(), link: desc))
-                        print(self.content)
-                    }
+                let user = Auth.auth().currentUser
+               if let user = user {
                     
+                    let uid = user.uid
+                
+                d.collection(Type).document(document.documentID).collection("participants").whereField("UID", isEqualTo: uid).getDocuments(){(querySnapshot, err) in
+                        if let err = err{
+                            print("No such user: \(err)")
+                        }else{
+                            if (querySnapshot?.documents.count)! > 0{
+                                if let tmp = document.get("time") as? Timestamp {
+                                    if let desc = document.get("Zoom") as? String{
+                                        self.content.append(MeetingCell(title: document.documentID, date: tmp.dateValue(), link: desc))
+
+                                    
+                                    }
+                                               
+                                }
+                            }
+                             
+                            
+                        }
+                        self.tableView.reloadData()
+                    }
+                
+               
                 }
             }
-            self.header = Type
            
-                         
-            self.tableView.reloadData()
+            
             
         }
     }
+     
     }
     override func viewWillAppear(_ animated: Bool) {
         let db = Firestore.firestore()
         self.loadData(Type: "Meeting", d: db)
         super.viewWillAppear(true)
         
+        
     }
     
     
-    func deleteDoc(title : String){
-            let d = Firestore.firestore()
-           d.collection(self.t!).document(title).delete()
-            self.loadData(Type: self.t!, d: d)
+    func exitDoc(title : String){
+        let d = Firestore.firestore()
+        let user = Auth.auth().currentUser
+             if let user = user {
+             let email = user.email
+            d.collection(self.t).document(title).collection("participants").whereField("Email", isEqualTo: email!).getDocuments(){(querySnapshot, err) in
+            if let err = err{
+             print("Error happened: \(err)")
+            }else{
+                 for document2 in querySnapshot!.documents {                    d.collection(self.t).document(title).collection("participants").document(document2.documentID).delete()
+                }
+        }
+            self.loadData(Type: self.t, d: d)
                 
             
         
     }
-    
-    func updateDoc(title: String, des : String, link:String){
-            let d = Firestore.firestore()
-        d.collection(self.t!).document(title).updateData(["Description":des, "Link":link,"Date": Timestamp.init()])
-            self.loadData(Type: self.t!, d: d)
-        
+        }
     }
+
     
+    func deleteDoc(title : String){
+        let d = Firestore.firestore()
+        //d.collection(self.t).document(title).collection("participants").d
+        d.collection(self.t).document(title).delete()
+        self.loadData(Type: self.t, d: d)
+    }
+
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

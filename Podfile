@@ -12,6 +12,9 @@ target 'CustomLoginDemo' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/InAppMessagingDisplay'
+  pod 'Firebase/InAppMessaging'
+
 
   target 'CustomLoginDemoTests' do
     inherit! :search_paths

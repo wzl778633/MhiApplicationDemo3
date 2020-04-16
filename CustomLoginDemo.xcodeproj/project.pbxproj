@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261281D22447DE8200CA2FC6 /* UpdateMeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261281D12447DE8200CA2FC6 /* UpdateMeetingVC.swift */; };
 		26F780F1240C4D2700508EA3 /* UpdateLinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */; };
 		26F98B79240E27C900F2934C /* CustomLoginDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F98B78240E27C900F2934C /* CustomLoginDemoTests.swift */; };
 		26F98B87240E31B100F2934C /* CustomLoginDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F98B86240E31B100F2934C /* CustomLoginDemoUITests.swift */; };
@@ -52,6 +53,7 @@
 		088450707C90C9610DA72F7B /* Pods-CustomLoginDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemoUITests/Pods-CustomLoginDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0FE4DD51A80DCEC807A5654D /* Pods-CustomLoginDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemo.debug.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		11C5E2B8F59F1191C408A35E /* Pods-CustomLoginDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemoTests/Pods-CustomLoginDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		261281D12447DE8200CA2FC6 /* UpdateMeetingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMeetingVC.swift; sourceTree = "<group>"; };
 		26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLinkVC.swift; sourceTree = "<group>"; };
 		26F98B76240E27C900F2934C /* CustomLoginDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomLoginDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F98B78240E27C900F2934C /* CustomLoginDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginDemoTests.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				AF47E7CC240C03CA00E78F60 /* AboutVC.swift */,
 				AFED1CF22447BEDF00E0CB64 /* ContactVC.swift */,
 				26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */,
+				261281D12447DE8200CA2FC6 /* UpdateMeetingVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				44FE5D8D2409B99400C83B17 /* Frameworks */,
 				44FE5D8E2409B99400C83B17 /* Resources */,
 				E6C50177FE15F26005BDF3A5 /* [CP] Embed Pods Frameworks */,
+				80187FB2B2A95268FC5E8EA7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,6 +388,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80187FB2B2A95268FC5E8EA7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B591041BDFCF9E34C872B521 /* [CP] Embed Pods Frameworks */ = {
@@ -508,6 +529,7 @@
 				44FE5D982409B99400C83B17 /* ViewController.swift in Sources */,
 				44FE5D942409B99400C83B17 /* AppDelegate.swift in Sources */,
 				AFED1CF32447BEDF00E0CB64 /* ContactVC.swift in Sources */,
+				261281D22447DE8200CA2FC6 /* UpdateMeetingVC.swift in Sources */,
 				44FE5DAF2409C75D00C83B17 /* Utilities.swift in Sources */,
 				26F780F1240C4D2700508EA3 /* UpdateLinkVC.swift in Sources */,
 				44FE5DA82409B9DD00C83B17 /* SignUpViewController.swift in Sources */,

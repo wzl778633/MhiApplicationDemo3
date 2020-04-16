@@ -128,13 +128,13 @@ class AboutVC: UITableViewController {
         } else {
             self.content = [BasicCell]()
             for document in querySnapshot!.documents {
-                print("\(document.documentID) => \(document.data())")
+               
 
                 if let tmp = document.get("Date") as? Timestamp {
                     if let desc = document.get("Description") as? String{
                         if let lnk = document.get("Link") as? String{
                             self.content.append(BasicCell(desc: desc, title: document.documentID, date: tmp.dateValue(), link: lnk))
-                            print(self.content)
+                            
                         }
                     }
                     

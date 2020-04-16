@@ -5,9 +5,10 @@
 //  Created by Christopher Ching on 2019-05-09.
 //  Copyright © 2019 Christopher Ching. All rights reserved.
 //
-
+import Firebase
 import Foundation
 import UIKit
+
 
 
 class Utilities {
@@ -91,5 +92,7 @@ class Utilities {
         }
         return null
     }
+  
     
+
 }
