@@ -30,8 +30,8 @@ class UpdateMeetingVC: UIViewController {
         toolbar.setItems([doneBtn], animated: true)
         dateTextField.inputAccessoryView = toolbar
         dateTextField.inputView = datePicker
-        
     }
+    
     @objc func donePressed(){
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

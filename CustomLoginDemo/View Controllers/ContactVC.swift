@@ -30,10 +30,6 @@ class ContactVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
       
-                      
-        
-        
-        
     }
 
     // MARK: - Table view data source
@@ -57,12 +53,17 @@ class ContactVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        
         // Configure the cell...
         cell.textLabel!.text = content[indexPath.row].title
         cell.detailTextLabel!.text = content[indexPath.row].date.description
-        
-        
+        if (Timestamp(date: content[indexPath.row].date.addingTimeInterval(86400))).compare(Timestamp.init()) == ComparisonResult.orderedDescending{
+            if (Timestamp(date: content[indexPath.row].date)).compare(Timestamp.init()) == ComparisonResult.orderedAscending{
+                cell.backgroundColor = UIColor.green
+            }
+        }
+        if (Timestamp(date: content[indexPath.row].date.addingTimeInterval(86400))).compare(Timestamp.init()) == ComparisonResult.orderedAscending{
+             cell.backgroundColor = UIColor.orange
+        }
         return cell
     }
     
@@ -146,6 +147,7 @@ class ContactVC: UITableViewController {
                              
                             
                         }
+                        self.changeView()
                         self.tableView.reloadData()
                     }
                 
@@ -188,7 +190,22 @@ class ContactVC: UITableViewController {
         }
     }
 
-    
+    func changeView(){
+        var content2 = [MeetingCell]()
+        var content3 = [MeetingCell]()
+        for cell in self.content{
+            if (Timestamp(date:cell.date.addingTimeInterval(86400))).compare(Timestamp.init()) == ComparisonResult.orderedAscending{
+                content2.append(MeetingCell(title:cell.title,date:cell.date,link: cell.link))
+            }else{
+                content3.append(MeetingCell(title:cell.title,date:cell.date,link: cell.link))
+            }
+        }
+        self.content.removeAll()
+        content3.reverse()
+        content2.reverse()
+        self.content.append(contentsOf: content3)
+        self.content.append(contentsOf: content2)
+    }
     func deleteDoc(title : String){
         let d = Firestore.firestore()
         //d.collection(self.t).document(title).collection("participants").d
