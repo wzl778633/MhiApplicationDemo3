@@ -69,6 +69,7 @@ class UpdateMeetingVC: UIViewController {
         guard let name = meetingTextField.text, !name.isEmpty else {return}
         guard let link = zoomLinkField.text, !link.isEmpty else{return}
         guard let date = dateTextField.text, !date.isEmpty else{return}
+        
         docRef = db.collection("Meeting").document(name)
             
         if let d = docRef{

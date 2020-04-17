@@ -57,7 +57,7 @@ class ContactVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        print(self.content)
+        
         // Configure the cell...
         cell.textLabel!.text = content[indexPath.row].title
         cell.detailTextLabel!.text = content[indexPath.row].date.description
@@ -129,9 +129,15 @@ class ContactVC: UITableViewController {
                         }else{
                             if (querySnapshot?.documents.count)! > 0{
                                 if let tmp = document.get("time") as? Timestamp {
+                                    let currentTime = Timestamp.init()
+                                    if  (Timestamp(date:tmp.dateValue().addingTimeInterval(86400))).compare(currentTime) == ComparisonResult.orderedAscending{
+                                        if let desc = document.get("Zoom") as? String{
+                                        self.content.append(MeetingCell(title: document.documentID + " (expired)", date: tmp.dateValue(), link: desc))
+                                        }
+                                    }else{
                                     if let desc = document.get("Zoom") as? String{
                                         self.content.append(MeetingCell(title: document.documentID, date: tmp.dateValue(), link: desc))
-
+                                        }
                                     
                                     }
                                                
