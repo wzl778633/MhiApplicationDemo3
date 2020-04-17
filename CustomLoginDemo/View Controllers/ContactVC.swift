@@ -73,7 +73,7 @@ class ContactVC: UITableViewController {
         let exit = UIContextualAction(style: .destructive, title: "Exit"){  (contextualAction, view, boolValue) in
             let alertController = UIAlertController(title: "Exit this meeting?", message: "Are you really want to exit this meeting?", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alertController.addAction(UIAlertAction(title: "Say Goodbay", style: .destructive, handler: {(alertAction) in
+            alertController.addAction(UIAlertAction(title: "Say Goodbye", style: .destructive, handler: {(alertAction) in
                     self.exitDoc(title: doc)
             }))
            
@@ -174,12 +174,15 @@ class ContactVC: UITableViewController {
         let d = Firestore.firestore()
         let user = Auth.auth().currentUser
              if let user = user {
-             let email = user.email
-            d.collection(self.t).document(title).collection("participants").whereField("Email", isEqualTo: email!).getDocuments(){(querySnapshot, err) in
+             let uid = user.uid
+            d.collection(self.t).document(title).collection("participants").whereField("UID", isEqualTo: uid).getDocuments(){(querySnapshot, err) in
             if let err = err{
              print("Error happened: \(err)")
             }else{
-                 for document2 in querySnapshot!.documents {                    d.collection(self.t).document(title).collection("participants").document(document2.documentID).delete()
+                 for document2 in querySnapshot!.documents {
+                    d.collection(self.t).document(title).collection("participants").document(document2.documentID).delete()
+                    
+                    
                 }
         }
             self.loadData(Type: self.t, d: d)

@@ -18,10 +18,25 @@ class UpdateMeetingVC: UIViewController {
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var zoomLinkField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet var selectButton: UIButton!
     var docRef : DocumentReference!
     var docRef2 : DocumentReference!
     var time : Timestamp!
     let datePicker = UIDatePicker()
+    var invitees = [UserCell]()
+     
+    func updateInvite(invitees: [UserCell]){
+        self.invitees = invitees
+        print(self.invitees)
+        if self.invitees.count > 0{
+            let str = "Selected "+self.invitees.count.description+" invitees"
+            selectButton.setTitle(str,for: .normal)
+        }else{
+            let str = "Select invitees"
+            selectButton.setTitle(str,for: .normal)
+        }
+            
+    }
    
     func createDatePicker(){
         let toolbar = UIToolbar()
@@ -61,53 +76,68 @@ class UpdateMeetingVC: UIViewController {
     
 
     @IBAction func saveTapped(_ sender: UIButton) {
-        let db = Firestore.firestore()
-        let error = validateFields()
-        if error != nil{
-            showError(error!)
-        }else{
-        guard let name = meetingTextField.text, !name.isEmpty else {return}
-        guard let link = zoomLinkField.text, !link.isEmpty else{return}
-        guard let date = dateTextField.text, !date.isEmpty else{return}
         
-        docRef = db.collection("Meeting").document(name)
+        if self.invitees.count == 0{
+            self.showError("Error! Must at least select one invitee")
+        }else{
+            let db = Firestore.firestore()
+            let error = validateFields()
+            if error != nil{
+                showError(error!)
+            }else{
+            guard let name = meetingTextField.text, !name.isEmpty else {return}
+            guard let link = zoomLinkField.text, !link.isEmpty else{return}
+            guard let date = dateTextField.text, !date.isEmpty else{return}
             
-        if let d = docRef{
-        d.setData([
-            "Zoom": link,
-            "time": time!
-        ]){(error) in
-            if let error = error{
-                self.showError("Error! cannot store this Meeting to database: \(error.localizedDescription)")
-            }else {
-                //Need to be changed!
-                //self.showError("Success!")
-                self.meetingTextField.isUserInteractionEnabled = false
-                self.zoomLinkField.isUserInteractionEnabled = false
-                self.dateTextField.isUserInteractionEnabled = false
-                self.present(self.alertController,animated: true,completion: nil)
+            docRef = db.collection("Meeting").document(name)
+                
+            if let d = docRef{
+            d.setData([
+                "Zoom": link,
+                "time": time!
+            ]){(error) in
+                if let error = error{
+                    self.showError("Error! cannot store this Meeting to database: \(error.localizedDescription)")
+                }else {
+                    //Need to be changed!
+                    //self.showError("Success!")
+                    self.meetingTextField.isUserInteractionEnabled = false
+                    self.zoomLinkField.isUserInteractionEnabled = false
+                    self.dateTextField.isUserInteractionEnabled = false
+                    self.present(self.alertController,animated: true,completion: nil)
+                }
+                
             }
-            
-        }
-        }
-            let user = Auth.auth().currentUser
-            if let user = user {
-                   let uid = user.uid
-                   let email = user.email
+            }
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    let uid = user.uid
                     docRef2 = db.collection("Meeting").document(name).collection("participants").document()
                     if let d2 = docRef2{
                     d2.setData([
-                        "Email": email!,
                         "UID": uid
                     ]){(error) in
                         if let error = error{
                             self.showError("Error! cannot store this Meeting to database: \(error.localizedDescription)")
+                            }
                         }
+                
+                    }
+                    for invitee in invitees{
+                        let docRef3 = db.collection("Meeting").document(name).collection("participants").document()
+                        docRef3.setData([
+                            "UID" : invitee.uid
+                        ]){(error) in
+                            if let error = error{
+                                self.showError("Error! cannot store this Meeting to database: \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                    
+                }
             }
-            
         }
-    }
-    }
+
     }
     func dismissVC(){
         self.navigationController?.popViewController(animated: true)

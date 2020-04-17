@@ -28,6 +28,7 @@
 		AF47E7C6240BF48700E78F60 /* MenuNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */; };
 		AF47E7CD240C03CA00E78F60 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47E7CC240C03CA00E78F60 /* AboutVC.swift */; };
 		AFED1CF32447BEDF00E0CB64 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED1CF22447BEDF00E0CB64 /* ContactVC.swift */; };
+		AFED1CF52449880A00E0CB64 /* InviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED1CF42449880A00E0CB64 /* InviteVC.swift */; };
 		D52D92A76E0E58FCEA4D996A /* Pods_CustomLoginDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B68093F3F3E02AC6D491DF /* Pods_CustomLoginDemoUITests.framework */; };
 		D6B0D253C8BFCBED76FB11E2 /* Pods_CustomLoginDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809A2AECE4FD49A9584A832B /* Pods_CustomLoginDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNaviViewController.swift; sourceTree = "<group>"; };
 		AF47E7CC240C03CA00E78F60 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		AFED1CF22447BEDF00E0CB64 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
+		AFED1CF42449880A00E0CB64 /* InviteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteVC.swift; sourceTree = "<group>"; };
 		E59849AB86BE4C2A0DADA216 /* Pods_CustomLoginDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomLoginDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE8FDCE3DD0C17777E1C28E /* Pods-CustomLoginDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomLoginDemo.release.xcconfig"; path = "Target Support Files/Pods-CustomLoginDemo/Pods-CustomLoginDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				44FE5D972409B99400C83B17 /* ViewController.swift */,
 				AF47E7CC240C03CA00E78F60 /* AboutVC.swift */,
 				AFED1CF22447BEDF00E0CB64 /* ContactVC.swift */,
+				AFED1CF42449880A00E0CB64 /* InviteVC.swift */,
 				26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */,
 				261281D12447DE8200CA2FC6 /* UpdateMeetingVC.swift */,
 			);
@@ -530,6 +533,7 @@
 				44FE5D942409B99400C83B17 /* AppDelegate.swift in Sources */,
 				AFED1CF32447BEDF00E0CB64 /* ContactVC.swift in Sources */,
 				261281D22447DE8200CA2FC6 /* UpdateMeetingVC.swift in Sources */,
+				AFED1CF52449880A00E0CB64 /* InviteVC.swift in Sources */,
 				44FE5DAF2409C75D00C83B17 /* Utilities.swift in Sources */,
 				26F780F1240C4D2700508EA3 /* UpdateLinkVC.swift in Sources */,
 				44FE5DA82409B9DD00C83B17 /* SignUpViewController.swift in Sources */,

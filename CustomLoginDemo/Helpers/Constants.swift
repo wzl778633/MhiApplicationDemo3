@@ -26,3 +26,8 @@ struct MeetingCell {
     var date : Date
     var link : String
 }
+struct UserCell:Equatable {
+    var Name : String
+    var uid : String
+}
+
