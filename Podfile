@@ -12,9 +12,20 @@ target 'CustomLoginDemo' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-  pod 'Firebase/InAppMessagingDisplay'
-  pod 'Firebase/InAppMessaging'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  
+  pod 'GoogleMobileAds'
+  pod "AlamofireRSSParser"
+  pod 'FBSDKCoreKit'
+   pod 'FBSDKLoginKit'
+   pod 'FBSDKShareKit'
+  
+  pod 'Alamofire', '~> 5.0.4'
+  pod 'Kingfisher', '~> 5.13.2'
 
+  pod 'Eureka', '~> 5.2.0'
 
   target 'CustomLoginDemoTests' do
     inherit! :search_paths

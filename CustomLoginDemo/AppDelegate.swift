@@ -8,17 +8,49 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
 
+    let chatServerConfig = ChatServiceConfig()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        FirebaseApp.configure()
+        
+        let config = ChatUIConfiguration()
+        config.configureUI()
+
+        let serverConfig = ChatServerConfiguration()
+
+        if (serverConfig.isFirebaseAuthEnabled || serverConfig.isFirebaseDatabaseEnabled) {
+            FirebaseApp.configure()
+        }
+
+        let threadsDataSource = ATCChatFirebaseChannelDataSource()
+        let userSearchDataSource: ATCGenericSearchViewControllerDataSource = (serverConfig.isFirebaseDatabaseEnabled ?
+            ATCFirebaseFriendsSearchDataSource() :
+            ATCGenericLocalSearchDataSource(items: ATCChatMockStore.users))
+
+        let profileManager: ATCProfileManager? = (serverConfig.isFirebaseDatabaseEnabled ? ATCFirebaseProfileManager() : nil)
+        let reportingManager: ATCUserReportingProtocol? = (serverConfig.isFirebaseDatabaseEnabled ? ATCFirebaseUserReporter() : nil)
+
+        // Window setup
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = ChatHostViewController(uiConfig: config,
+                                                            serverConfig: serverConfig,
+                                                            chatServiceConfig: chatServerConfig,
+                                                            threadsDataSource: threadsDataSource,
+                                                            profileManager: profileManager,
+                                                            userSearchDataSource: userSearchDataSource,
+                                                            reportingManager: reportingManager)
+        window?.makeKeyAndVisible()
+        
+
         return true
     }
 
