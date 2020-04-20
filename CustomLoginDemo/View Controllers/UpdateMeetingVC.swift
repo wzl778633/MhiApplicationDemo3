@@ -27,9 +27,8 @@ class UpdateMeetingVC: UIViewController {
      
     func updateInvite(invitees: [UserCell]){
         self.invitees = invitees
-        print(self.invitees)
-        if self.invitees.count > 0{
-            let str = "Selected "+self.invitees.count.description+" invitees"
+        if self.invitees.count > 1{
+            let str = "Selected "+(self.invitees.count-1).description+" invitees"
             selectButton.setTitle(str,for: .normal)
         }else{
             let str = "Select invitees"
@@ -77,7 +76,7 @@ class UpdateMeetingVC: UIViewController {
 
     @IBAction func saveTapped(_ sender: UIButton) {
         
-        if self.invitees.count == 0{
+        if self.invitees.count == 1{
             self.showError("Error! Must at least select one invitee")
         }else{
             let db = Firestore.firestore()
@@ -109,31 +108,16 @@ class UpdateMeetingVC: UIViewController {
                 
             }
             }
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    let uid = user.uid
-                    docRef2 = db.collection("Meeting").document(name).collection("participants").document()
-                    if let d2 = docRef2{
-                    d2.setData([
-                        "UID": uid
+
+                for invitee in invitees{
+                    let docRef3 = db.collection("Meeting").document(name).collection("participants").document()
+                    docRef3.setData([
+                        "UID" : invitee.uid
                     ]){(error) in
                         if let error = error{
                             self.showError("Error! cannot store this Meeting to database: \(error.localizedDescription)")
-                            }
-                        }
-                
-                    }
-                    for invitee in invitees{
-                        let docRef3 = db.collection("Meeting").document(name).collection("participants").document()
-                        docRef3.setData([
-                            "UID" : invitee.uid
-                        ]){(error) in
-                            if let error = error{
-                                self.showError("Error! cannot store this Meeting to database: \(error.localizedDescription)")
-                            }
                         }
                     }
-                    
                 }
             }
         }

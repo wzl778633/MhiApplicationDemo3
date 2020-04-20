@@ -27,7 +27,37 @@ struct MeetingCell {
     var link : String
 }
 struct UserCell:Equatable {
-    var Name : String
+    var fName : String
+    var lName : String
     var uid : String
+}
+
+class RoomCell {
+    var roomid : String
+    var roomName : String
+    var participants : [UserCell]
+    var lastMessage : String
+    var lastDate : Date
+    init(roomid: String, roomName: String, participants: [UserCell], lastMessage: String, lastDate: Date){
+        self.roomid = roomid
+        self.roomName = roomName
+        self.participants = participants
+        self.lastMessage = lastMessage
+        self.lastDate = lastDate
+    }
+    
+    func setLastMessage(str: String){
+        lastMessage = str
+    }
+    func setLastDate(d: Date){
+        lastDate = d
+    }
+}
+struct ThreadCell:Equatable {
+    var name : String
+    var lastMessage : String
+    
+    
+    
 }
 

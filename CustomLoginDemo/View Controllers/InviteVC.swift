@@ -12,7 +12,7 @@ import FirebaseAuth
 class user: UITableViewCell{
     
     @IBOutlet var userLabel: UILabel!
-    var information = UserCell(Name: "", uid: "")
+    var information = UserCell(fName: "",lName: "", uid: "")
 }
 class InviteVC: UITableViewController {
 
@@ -40,14 +40,25 @@ class InviteVC: UITableViewController {
 
     
     // MARK: - Table view data source
+    
+    func getPeople() -> [UserCell]{
+        return self.selectedUser
+    }
 
     @IBAction func performUpdate(_ sender: UIButton) {
         performSegue(withIdentifier: "segUpdate", sender: sender)
     }
     @IBAction func performInvite(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
-        let vc = self.navigationController?.topViewController as! UpdateMeetingVC
-        vc.updateInvite(invitees: selectedUser)
+
+        if self.navigationController?.topViewController is UpdateMeetingVC{
+            let vc = self.navigationController?.topViewController as! UpdateMeetingVC
+            vc.updateInvite(invitees: selectedUser)
+        }else if self.navigationController?.topViewController is NewChatVC{
+            let vc = self.navigationController?.topViewController as! NewChatVC
+            vc.updateInvite(invitees: selectedUser)
+        }
+        
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -66,7 +77,7 @@ class InviteVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! user
 
         cell.information = content[indexPath.row]
-        cell.userLabel!.text = content[indexPath.row].Name
+        cell.userLabel!.text = content[indexPath.row].fName + " " + content[indexPath.row].lName
         
         return cell
     }
@@ -102,14 +113,15 @@ class InviteVC: UITableViewController {
             for document in querySnapshot!.documents {
                
 
-                if let fname = document.get("firstname") as? String {
-                    if let lname = document.get("lastname") as? String{
-                        if let uid = document.get("uid") as? String{
-                            let name = fname + " " + lname
+                if let fname = document.get("firstName") as? String {
+                    if let lname = document.get("lastName") as? String{
+                        if let uid = document.get("userID") as? String{
                             
                             let yourself = Auth.auth().currentUser?.uid
                             if uid != yourself{
-                                self.content.append(UserCell(Name: name,uid: uid))
+                                self.content.append(UserCell(fName: fname,lName: lname,uid: uid))
+                            }else{
+                                self.selectedUser.append(UserCell(fName: fname,lName: lname,uid: uid))
                             }
 
                             

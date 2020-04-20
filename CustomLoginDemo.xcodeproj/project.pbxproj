@@ -501,6 +501,8 @@
 		8055BABE2D9229C01862ECBB /* Pods_CustomLoginDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59849AB86BE4C2A0DADA216 /* Pods_CustomLoginDemo.framework */; };
 		AF47E7C6240BF48700E78F60 /* MenuNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */; };
 		AF47E7CD240C03CA00E78F60 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF47E7CC240C03CA00E78F60 /* AboutVC.swift */; };
+		AF79AD8F244C3151002EE1A7 /* chatMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79AD8E244C3151002EE1A7 /* chatMenuVC.swift */; };
+		AF79AD91244C49BE002EE1A7 /* NewChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79AD90244C49BE002EE1A7 /* NewChatVC.swift */; };
 		AFED1CF32447BEDF00E0CB64 /* ContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED1CF22447BEDF00E0CB64 /* ContactVC.swift */; };
 		AFED1CF52449880A00E0CB64 /* InviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED1CF42449880A00E0CB64 /* InviteVC.swift */; };
 		D52D92A76E0E58FCEA4D996A /* Pods_CustomLoginDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B68093F3F3E02AC6D491DF /* Pods_CustomLoginDemoUITests.framework */; };
@@ -1036,6 +1038,8 @@
 		A1B68093F3F3E02AC6D491DF /* Pods_CustomLoginDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomLoginDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF47E7C5240BF48700E78F60 /* MenuNaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNaviViewController.swift; sourceTree = "<group>"; };
 		AF47E7CC240C03CA00E78F60 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		AF79AD8E244C3151002EE1A7 /* chatMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatMenuVC.swift; sourceTree = "<group>"; };
+		AF79AD90244C49BE002EE1A7 /* NewChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatVC.swift; sourceTree = "<group>"; };
 		AFED1CF22447BEDF00E0CB64 /* ContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVC.swift; sourceTree = "<group>"; };
 		AFED1CF42449880A00E0CB64 /* InviteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteVC.swift; sourceTree = "<group>"; };
 		E59849AB86BE4C2A0DADA216 /* Pods_CustomLoginDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomLoginDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2485,6 +2489,8 @@
 				AFED1CF42449880A00E0CB64 /* InviteVC.swift */,
 				26F780F0240C4D2700508EA3 /* UpdateLinkVC.swift */,
 				261281D12447DE8200CA2FC6 /* UpdateMeetingVC.swift */,
+				AF79AD8E244C3151002EE1A7 /* chatMenuVC.swift */,
+				AF79AD90244C49BE002EE1A7 /* NewChatVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -3113,6 +3119,7 @@
 				2691AF30244BB5E4004D7E8F /* ATCLoginScreenManager.swift in Sources */,
 				2691AF68244BB5E4004D7E8F /* ConstraintInsets.swift in Sources */,
 				2691AFE6244BB5E4004D7E8F /* InputBarAccessoryView.swift in Sources */,
+				AF79AD8F244C3151002EE1A7 /* chatMenuVC.swift in Sources */,
 				2691AFC7244BB5E4004D7E8F /* MediaItem.swift in Sources */,
 				2691AF79244BB5E4004D7E8F /* ConstraintLayoutGuideDSL.swift in Sources */,
 				2691AF37244BB5E4004D7E8F /* ATCLandingScreenViewModel.swift in Sources */,
@@ -3150,6 +3157,7 @@
 				2691AE8F244BB5E4004D7E8F /* ATCSocialGraphManagerProtocol.swift in Sources */,
 				2691AE76244BB5E4004D7E8F /* ATCDivider.swift in Sources */,
 				2691AF5E244BB5E4004D7E8F /* TapActionCell.swift in Sources */,
+				AF79AD91244C49BE002EE1A7 /* NewChatVC.swift in Sources */,
 				2691AE20244BB5E4004D7E8F /* ATCSocialFirebaseUserManager.swift in Sources */,
 				2691AEA5244BB5E4004D7E8F /* ATCCollectionViewFlowLayout.swift in Sources */,
 				2691AE4D244BB5E4004D7E8F /* InstaMultiRowPageCarouselCollectionViewCell.swift in Sources */,

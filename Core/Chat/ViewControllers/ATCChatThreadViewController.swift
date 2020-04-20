@@ -328,7 +328,6 @@ class ATCChatThreadViewController: MessagesViewController, MessagesDataSource, A
         }
         
         reference = db.collection(["channels", channel.id, "thread"].joined(separator: "/"))
-        db.collection("channels").document(channel.id).updateData(["name" : channel.name])
         
         
         navigationItem.largeTitleDisplayMode = .never
@@ -630,7 +629,8 @@ class ATCChatThreadViewController: MessagesViewController, MessagesDataSource, A
             }
             let newData: [String: Any] = [
                 "lastMessageDate": Date(),
-                "lastMessage": lastMessage
+                "lastMessage": lastMessage,
+                "name": self.channel.name
             ]
             channelRef.setData(newData, merge: true)
             ATCChatFirebaseManager.updateChannelParticipationIfNeeded(channel: self.channel)
