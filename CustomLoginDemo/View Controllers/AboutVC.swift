@@ -52,12 +52,15 @@ class AboutVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FaviconTableViewCell
+         
+         let host = content[indexPath.row].link
+         let url = URL(string: "https://www.google.com/s2/favicons?domain=\(host)")
+         print(url as Any)
+         cell.url = url
+         // Configure the cell...
         cell.textLabel!.text = content[indexPath.row].title
-        cell.detailTextLabel!.text = content[indexPath.row].desc
-        
+         cell.detailTextLabel!.text = content[indexPath.row].desc
         
         return cell
     }
