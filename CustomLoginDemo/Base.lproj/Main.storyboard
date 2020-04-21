@@ -545,12 +545,12 @@
             </objects>
             <point key="canvasLocation" x="5426.0869565217399" y="114.50892857142857"/>
         </scene>
-        <!--Item-->
+        <!--Meeting-->
         <scene sceneID="fZv-Vz-xfC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L4t-gi-F3Y" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="mA7-jc-Fhj"/>
+                    <tabBarItem key="tabBarItem" title="Meeting" image="person.3" catalog="system" selectedImage="person.3.fill" id="mA7-jc-Fhj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwR-5q-n8l">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -565,12 +565,12 @@
             </objects>
             <point key="canvasLocation" x="4515.9420289855079" y="114.50892857142857"/>
         </scene>
-        <!--Item-->
+        <!--Resource-->
         <scene sceneID="dUs-pp-9Ia">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0qO-F1-20F" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="xdR-sS-YLY"/>
+                    <tabBarItem key="tabBarItem" title="Resource" image="link" catalog="system" selectedImage="link.circle" id="xdR-sS-YLY"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pMW-Pg-tkE">
@@ -780,11 +780,11 @@
             </objects>
             <point key="canvasLocation" x="5426" y="-558"/>
         </scene>
-        <!--Item-->
+        <!--Chatting-->
         <scene sceneID="fhd-9v-ptj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TRr-iB-8as" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="cep-pq-j6S"/>
+                    <tabBarItem key="tabBarItem" title="Chatting" image="chat-icon" selectedImage="chat-filled-icon" id="cep-pq-j6S"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wpr-oK-a9T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -863,7 +863,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chat-filled-icon" width="45" height="45"/>
+        <image name="chat-icon" width="25" height="25"/>
+        <image name="link" catalog="system" width="64" height="58"/>
+        <image name="link.circle" catalog="system" width="64" height="60"/>
         <image name="osumhi" width="400" height="400"/>
+        <image name="person.3" catalog="system" width="72" height="35"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
