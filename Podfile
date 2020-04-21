@@ -33,13 +33,26 @@ target 'CustomLoginDemo' do
     end
   target 'CustomLoginDemoUITests' do
   inherit! :search_paths
-  pod 'Firebase'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  
+  pod 'GoogleMobileAds'
+  pod "AlamofireRSSParser"
+  pod 'FBSDKCoreKit'
+   pod 'FBSDKLoginKit'
+   pod 'FBSDKShareKit'
+  
+  pod 'Alamofire', '~> 5.0.4'
+  pod 'Kingfisher', '~> 5.13.2'
+
+  pod 'Eureka', '~> 5.2.0'
   end
 
 # Optionally, include the Swift extensions if you're using Swift.

@@ -105,20 +105,7 @@ class CustomLoginDemoUITests: XCTestCase {
                          
     }
     
-    func testClickTab(){
-        let app = XCUIApplication()
-        
-        testValidLogin()
-        app.buttons["Contacts"].tap()
-        let mainMenuButton = app.navigationBars["CustomLoginDemo.AboutVC"].buttons["Main Menu"]
-        mainMenuButton.tap()
-        app.buttons["Jobs"].tap()
-        mainMenuButton.tap()
-        app.buttons["Links"].tap()
-        mainMenuButton.tap()
-        app.buttons["Misc"].tap()
-        mainMenuButton.tap()
-    }
+
     
     func testSignOut(){
         let app = XCUIApplication()
@@ -130,46 +117,185 @@ class CustomLoginDemoUITests: XCTestCase {
         
 
     }
-    func testAdd() {
+    func testAddMeeting() {
         
         let app = XCUIApplication()
         
         testValidLogin()
-        app.buttons["Contacts"].tap()
-        XCTAssert(app.navigationBars["CustomLoginDemo.AboutVC"].buttons["plus"].exists)
-        let plusButton = app.navigationBars["CustomLoginDemo.AboutVC"].buttons["plus"]
-        plusButton.tap()
-        XCTAssert(app.textFields["Name"].exists)
-        XCTAssert(app.textFields["Description"].exists)
-        XCTAssert(app.textFields["Link(check automatically)"].exists)
-        XCTAssert(app.buttons["Submit"].exists)
-        let nameTextField = app.textFields["Name"]
-        nameTextField.tap()
-        nameTextField.typeText("testName")
-        let descriptionTextField = app.textFields["Description"]
-        descriptionTextField.tap()
-        descriptionTextField.typeText("test description")
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Meeting"].tap()
+
+        app.navigationBars["CustomLoginDemo.ContactVC"].buttons["plus"].tap()
+        let meetingNameTextField = app.textFields["Meeting Name"]
+        meetingNameTextField.tap()
+        meetingNameTextField.typeText("test")
+        let meetingDateTextField = app.textFields["Meeting Date"]
+        meetingDateTextField.tap()
+        meetingDateTextField.tap()
+        
+        let app2 = app
+        app2.datePickers/*@START_MENU_TOKEN@*/.pickerWheels["Today"]/*[[".pickers.pickerWheels[\"Today\"]",".pickerWheels[\"Today\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.buttons["Select Invitees"].tap()
+        
+        let tablesQuery = app2.tables
+        tablesQuery.staticTexts["Dongqi Yin"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Songtao Wang"]/*[[".cells.staticTexts[\"Songtao Wang\"]",".staticTexts[\"Songtao Wang\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         
 
-        let linkTextField = app.textFields["Link(check automatically)"]
-        linkTextField.tap()
-        linkTextField.typeText("www.google.com")
+        app.navigationBars["CustomLoginDemo.InviteVC"].buttons["Done"].tap()
+        app.buttons["Submit"].tap()
         
-        let submitButton = app.buttons["Submit"]
-        submitButton.tap()
         let elementsQuery = app.alerts["Success!"].scrollViews.otherElements
-        
-        let okButton = elementsQuery.buttons["OK"]
-        okButton.tap()
-        
-        let tablesQuery2 = app.tables
-        XCTAssert(tablesQuery2.staticTexts["testName"].exists)
-        XCTAssert(tablesQuery2.staticTexts["test description"].exists)
-        
+        elementsQuery.staticTexts["Success!"].tap()
+        elementsQuery.buttons["OK"].tap()
 
                 
         
     }
+    
+    func testAddMeetingNoName() {
+        
+        let app = XCUIApplication()
+        
+        testValidLogin()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Meeting"].tap()
 
+        app.navigationBars["CustomLoginDemo.ContactVC"].buttons["plus"].tap()
+        let meetingDateTextField = app.textFields["Meeting Date"]
+        meetingDateTextField.tap()
+        meetingDateTextField.tap()
+        
+        let app2 = app
+        app2.datePickers/*@START_MENU_TOKEN@*/.pickerWheels["Today"]/*[[".pickers.pickerWheels[\"Today\"]",".pickerWheels[\"Today\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.buttons["Select Invitees"].tap()
+        
+        let tablesQuery = app2.tables
+        tablesQuery.staticTexts["Dongqi Yin"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Songtao Wang"]/*[[".cells.staticTexts[\"Songtao Wang\"]",".staticTexts[\"Songtao Wang\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+
+        app.navigationBars["CustomLoginDemo.InviteVC"].buttons["Done"].tap()
+        app.buttons["Submit"].tap()
+    
+        
+        let pleaseFillInAllFieldsStaticText = app.staticTexts["Please fill in all fields. "]
+        XCTAssert(pleaseFillInAllFieldsStaticText.exists)
+        pleaseFillInAllFieldsStaticText.tap()
+                
+        
+    }
+    
+    func testAddMeetingNoInvitee() {
+        
+        let app = XCUIApplication()
+        
+        testValidLogin()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Meeting"].tap()
+
+        app.navigationBars["CustomLoginDemo.ContactVC"].buttons["plus"].tap()
+        let meetingNameTextField = app.textFields["Meeting Name"]
+        meetingNameTextField.tap()
+        meetingNameTextField.typeText("test")
+        let meetingDateTextField = app.textFields["Meeting Date"]
+        meetingDateTextField.tap()
+        meetingDateTextField.tap()
+        
+        let app2 = app
+        app2.datePickers/*@START_MENU_TOKEN@*/.pickerWheels["Today"]/*[[".pickers.pickerWheels[\"Today\"]",".pickerWheels[\"Today\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        
+
+        app.buttons["Submit"].tap()
+    
+        
+        let pleaseFillInAllFieldsStaticText = app.staticTexts["Error! Must at least select one invitee"]
+        XCTAssert(pleaseFillInAllFieldsStaticText.exists)
+        pleaseFillInAllFieldsStaticText.tap()
+
+    }
+    
+    func testAddChatRoom() {
+        
+        let app = XCUIApplication()
+        
+        testValidLogin()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Chatting"].tap()
+
+        app.navigationBars["CustomLoginDemo.chatMenuVC"].buttons["plus"].tap()
+        let meetingNameTextField = app.textFields["Room Name (Optional)"]
+        meetingNameTextField.tap()
+        meetingNameTextField.typeText("test")
+
+        app.buttons["Select Invitees"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Dongqi Yin"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Songtao Wang"]/*[[".cells.staticTexts[\"Songtao Wang\"]",".staticTexts[\"Songtao Wang\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+        app.navigationBars["CustomLoginDemo.InviteVC"].buttons["Done"].tap()
+
+        app.buttons["Submit"].tap()
+    
+        
+
+
+    }
+    
+    func testAddChatRoomNoName() {
+        
+        let app = XCUIApplication()
+        
+        testValidLogin()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Chatting"].tap()
+
+        app.navigationBars["CustomLoginDemo.chatMenuVC"].buttons["plus"].tap()
+
+        app.buttons["Select Invitees"].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Dongqi Yin"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Songtao Wang"]/*[[".cells.staticTexts[\"Songtao Wang\"]",".staticTexts[\"Songtao Wang\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["CustomLoginDemo.InviteVC"].buttons["Done"].tap()
+
+
+        app.buttons["Submit"].tap()
+    
+        
+
+
+    }
+    func testAddChatRoomNoInvitee() {
+        
+        let app = XCUIApplication()
+        
+        testValidLogin()
+        
+        let tabBarsQuery = app.tabBars
+        tabBarsQuery.buttons["Chatting"].tap()
+
+        app.navigationBars["CustomLoginDemo.chatMenuVC"].buttons["plus"].tap()
+
+        
+
+
+        app.buttons["Submit"].tap()
+    
+        
+        let pleaseFillInAllFieldsStaticText = app.staticTexts["Error! Must at least select one invitee"]
+        XCTAssert(pleaseFillInAllFieldsStaticText.exists)
+        pleaseFillInAllFieldsStaticText.tap()
+
+    }
     
 }

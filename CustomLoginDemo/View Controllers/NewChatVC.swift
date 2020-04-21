@@ -59,7 +59,7 @@ class NewChatVC: UIViewController {
     
     @IBAction func saveTapped(_ sender: UIButton) {
         
-        if self.invitees.count == 1{
+        if self.invitees.count <= 1{
             self.showError("Error! Must at least select one invitee")
         }else{
             let myself = Auth.auth().currentUser

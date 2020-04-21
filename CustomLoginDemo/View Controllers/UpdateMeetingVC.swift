@@ -76,7 +76,7 @@ class UpdateMeetingVC: UIViewController {
 
     @IBAction func saveTapped(_ sender: UIButton) {
         
-        if self.invitees.count == 1{
+        if self.invitees.count <= 1{
             self.showError("Error! Must at least select one invitee")
         }else{
             let db = Firestore.firestore()

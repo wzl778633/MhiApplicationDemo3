@@ -168,20 +168,20 @@ PODS:
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
   - Eureka (5.2.1)
-  - FBSDKCoreKit (6.4.0):
-    - FBSDKCoreKit/Basics (= 6.4.0)
-    - FBSDKCoreKit/Core (= 6.4.0)
-  - FBSDKCoreKit/Basics (6.4.0)
-  - FBSDKCoreKit/Core (6.4.0):
+  - FBSDKCoreKit (6.5.0):
+    - FBSDKCoreKit/Basics (= 6.5.0)
+    - FBSDKCoreKit/Core (= 6.5.0)
+  - FBSDKCoreKit/Basics (6.5.0)
+  - FBSDKCoreKit/Core (6.5.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (6.4.0):
-    - FBSDKLoginKit/Login (= 6.4.0)
-  - FBSDKLoginKit/Login (6.4.0):
-    - FBSDKCoreKit (~> 6.4.0)
-  - FBSDKShareKit (6.4.0):
-    - FBSDKShareKit/Share (= 6.4.0)
-  - FBSDKShareKit/Share (6.4.0):
-    - FBSDKCoreKit (~> 6.4.0)
+  - FBSDKLoginKit (6.5.0):
+    - FBSDKLoginKit/Login (= 6.5.0)
+  - FBSDKLoginKit/Login (6.5.0):
+    - FBSDKCoreKit (~> 6.5.0)
+  - FBSDKShareKit (6.5.0):
+    - FBSDKShareKit/Share (= 6.5.0)
+  - FBSDKShareKit/Share (6.5.0):
+    - FBSDKCoreKit (~> 6.5.0)
   - Firebase (6.22.0):
     - Firebase/Core (= 6.22.0)
   - Firebase/Analytics (6.22.0):
@@ -398,9 +398,9 @@ SPEC CHECKSUMS:
   AlamofireRSSParser: ced366c481685cb6ed24e6d50b7b7a5a47c2da6d
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Eureka: c883105488e05bc65539f583246ecf9657cabbfe
-  FBSDKCoreKit: 7bea330627be2601a9079413c615313746aa9f7c
-  FBSDKLoginKit: 8694d063972c7c524f9d33ba2f9d890e54fbe8ad
-  FBSDKShareKit: 8d39510d72b9cc30f6000d0b0a74fc620b6b74ee
+  FBSDKCoreKit: bc8ba4b97454bc722823e72584547770b8b48030
+  FBSDKLoginKit: 2ab9aac8c26749efbc3c9d09896bb910f5b1311b
+  FBSDKShareKit: f1d9ba951f034c4a926ca0865da2ddeb521b0253
   Firebase: 32f9520684e87c7af3f0704f7f88042626d6b536
   FirebaseAnalytics: 83f822fd0d33a46f49f89b8c3ab16ab4d89df08a
   FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
@@ -430,6 +430,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
 
-PODFILE CHECKSUM: e6caeffd51d9c0cfe5ff1d89c2c0ea11fc9aa5b1
+PODFILE CHECKSUM: 710f88297c8709bb71994c8819479f17461fae82
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.0
