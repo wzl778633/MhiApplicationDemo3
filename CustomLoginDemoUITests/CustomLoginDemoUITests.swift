@@ -122,7 +122,7 @@ class CustomLoginDemoUITests: XCTestCase {
         let app = XCUIApplication()
         
         testValidLogin()
-        
+        sleep(1)
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Meeting"].tap()
 
@@ -160,7 +160,7 @@ class CustomLoginDemoUITests: XCTestCase {
         let app = XCUIApplication()
         
         testValidLogin()
-        
+        sleep(1)
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Meeting"].tap()
 
@@ -195,7 +195,7 @@ class CustomLoginDemoUITests: XCTestCase {
         let app = XCUIApplication()
         
         testValidLogin()
-        
+        sleep(1)
         let tabBarsQuery = app.tabBars
         tabBarsQuery.buttons["Meeting"].tap()
 
@@ -226,10 +226,8 @@ class CustomLoginDemoUITests: XCTestCase {
         let app = XCUIApplication()
         
         testValidLogin()
-        
-        let tabBarsQuery = app.tabBars
-        tabBarsQuery.buttons["Chatting"].tap()
-
+        sleep(1)
+        app.tabBars.buttons["Chatting"].tap()
         app.navigationBars["CustomLoginDemo.chatMenuVC"].buttons["plus"].tap()
         let meetingNameTextField = app.textFields["Room Name (Optional)"]
         meetingNameTextField.tap()
@@ -255,13 +253,14 @@ class CustomLoginDemoUITests: XCTestCase {
         let app = XCUIApplication()
         
         testValidLogin()
-        
-        let tabBarsQuery = app.tabBars
-        tabBarsQuery.buttons["Chatting"].tap()
+        sleep(1)
+        app.tabBars.buttons["Chatting"].tap()
 
         app.navigationBars["CustomLoginDemo.chatMenuVC"].buttons["plus"].tap()
 
         app.buttons["Select Invitees"].tap()
+        
+
         
         let tablesQuery = app.tables
         tablesQuery.staticTexts["Dongqi Yin"].tap()
@@ -280,9 +279,9 @@ class CustomLoginDemoUITests: XCTestCase {
         let app = XCUIApplication()
         
         testValidLogin()
-        
-        let tabBarsQuery = app.tabBars
-        tabBarsQuery.buttons["Chatting"].tap()
+        sleep(1)
+        XCTAssert(app.tabBars.buttons["Chatting"].exists)
+        app.tabBars.buttons["Chatting"].tap()
 
         app.navigationBars["CustomLoginDemo.chatMenuVC"].buttons["plus"].tap()
 

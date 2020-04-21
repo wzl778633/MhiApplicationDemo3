@@ -52,6 +52,5 @@ class CustomLoginDemoTests: XCTestCase {
     func testBadURL(){
         XCTAssertFalse(Utilities.isGoodUrl(urlString: "www.google"))
         XCTAssertFalse(Utilities.isGoodUrl(urlString: "gdjaskp"))
-        XCTAssertFalse(Utilities.isGoodUrl(urlString: "www.totallynonsense.com"))
     }
 }
