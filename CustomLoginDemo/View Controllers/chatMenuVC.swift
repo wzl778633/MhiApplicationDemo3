@@ -76,17 +76,16 @@ class chatMenuVC: UITableViewController {
             let myUid = user.uid
             
             
-            var myself = 0
-            var other = 1
+
             var user = [ATCUser]()
             let cell = self.chatrooms[indexPath.row]
-            
-
-            if cell.participants[1].uid == myUid{
-                myself = 1
-                other = 0
+            let myself = self.findMyself(cell: cell, myUID: myUid)
+            for i in 0...cell.participants.count-1{
+                if i != myself{
+                    user.append(ATCUser(uid: cell.participants[i].uid, firstName: cell.participants[i].fName, lastName: cell.participants[i].lName))
+                }
             }
-            user.append(ATCUser(uid: cell.participants[other].uid, firstName: cell.participants[other].fName, lastName: cell.participants[other].lName))
+            
             let uiConfig = ATCChatUIConfiguration(uiConfig: ChatUIConfiguration())
             let channel = ATCChatChannel(id: cell.roomid, name: cell.roomName)
             let viewer = ATCUser(uid: cell.participants[myself].uid, firstName: cell.participants[myself].fName, lastName: cell.participants[myself].lName)
@@ -104,6 +103,15 @@ class chatMenuVC: UITableViewController {
         
 
 
+    }
+    
+    func findMyself(cell: RoomCell,myUID: String) -> Int{
+        for x in cell.participants{
+            if x.uid == myUID{
+                return cell.participants.firstIndex(of: x)!
+            }
+        }
+        return -1
     }
     
     

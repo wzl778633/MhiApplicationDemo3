@@ -111,11 +111,11 @@ class ATChatMessage: ATCGenericBaseModel, MessageType {
 
         switch messageKind {
         case .text(let text):
-            self.content = text
+            self.content = self.atcSender.fullName() + ": " + text
         case .attributedText(let text):
             self.htmlContent = text
         default:
-            self.content = ""
+            self.content = self.atcSender.fullName() + ": "
             self.htmlContent = nil
         }
     }
@@ -199,7 +199,7 @@ class ATChatMessage: ATCGenericBaseModel, MessageType {
         self.recipient = ATCUser(uid: recipientID, firstName: recipientFirstName, lastName: recipientLastName, avatarURL: recipientProfilePictureURL)
 
         if let content = data["content"] as? String {
-            self.content = content
+            self.content = self.atcSender.fullName() + content
             let textColor = self.atcSender.uid == user.uid ? UIColor.white : UIColor.black
             self.htmlContent = content.htmlToAttributedString(textColor: textColor)
             downloadURL = nil

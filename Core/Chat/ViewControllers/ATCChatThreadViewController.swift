@@ -619,11 +619,11 @@ class ATCChatThreadViewController: MessagesViewController, MessagesDataSource, A
             case let .attributedText(text):
                 lastMessage = text.fetchAttributedText(allTagUsers: self.allTagUsers)
             case .audio(_):
-                lastMessage = "Someone sent an audio message.".localizedChat
+                lastMessage = "sent an audio message.".localizedChat
             case .photo(_):
-                lastMessage = "Someone sent a photo.".localizedChat
+                lastMessage = "sent a photo.".localizedChat
             case .video(_):
-                lastMessage = "Someone sent a video.".localizedChat
+                lastMessage = "sent a video.".localizedChat
             default:
                 break
             }
@@ -1018,8 +1018,9 @@ extension ATCChatThreadViewController: InputBarAccessoryViewDelegate {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.impactOccurred()
         let attributedString = inputBar.inputTextView.attributedText ?? NSAttributedString()
+        let test = NSAttributedString(string: user.fullName() + ": ") + attributedString
         let message = ATChatMessage(messageId: UUID().uuidString,
-                                    messageKind: MessageKind.attributedText(attributedString),
+                                    messageKind: MessageKind.attributedText(test),
                                     createdAt: Date(),
                                     atcSender: user,
                                     recipient: user,
