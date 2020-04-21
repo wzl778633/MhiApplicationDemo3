@@ -56,6 +56,7 @@ class ContactVC: UITableViewController {
         // Configure the cell...
         cell.textLabel!.text = content[indexPath.row].title
         cell.detailTextLabel!.text = content[indexPath.row].date.description
+        cell.backgroundColor = UIColor.white
         if (Timestamp(date: content[indexPath.row].date.addingTimeInterval(86400))).compare(Timestamp.init()) == ComparisonResult.orderedDescending{
             if (Timestamp(date: content[indexPath.row].date)).compare(Timestamp.init()) == ComparisonResult.orderedAscending{
                 cell.backgroundColor = UIColor.green
