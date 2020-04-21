@@ -22,6 +22,7 @@ class InviteVC: UITableViewController {
     var header = "Please select invitees"
     var t = "users"
     var db : Firestore?
+    var type: String = ""
     
     var docRef : DocumentReference!
    
@@ -30,7 +31,11 @@ class InviteVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.allowsMultipleSelection = true
+        if(self.type == "meeting"){
+            self.tableView.allowsMultipleSelection = true
+        }else if((self.type == "chat")){
+            self.tableView.allowsMultipleSelection = false
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.

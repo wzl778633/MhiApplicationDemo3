@@ -1018,9 +1018,8 @@ extension ATCChatThreadViewController: InputBarAccessoryViewDelegate {
         let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         feedbackGenerator.impactOccurred()
         let attributedString = inputBar.inputTextView.attributedText ?? NSAttributedString()
-        let test = NSAttributedString(string: user.fullName() + ": ") + attributedString
         let message = ATChatMessage(messageId: UUID().uuidString,
-                                    messageKind: MessageKind.attributedText(test),
+                                    messageKind: MessageKind.attributedText(attributedString),
                                     createdAt: Date(),
                                     atcSender: user,
                                     recipient: user,
